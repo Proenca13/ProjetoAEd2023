@@ -24,9 +24,8 @@ set<UcClass> parsing_classes(){
     }
     return classes;
 }
-void parsing_schedules() {
+void parsing_schedules(set<UcClass> classes) {
     ifstream in("classes.cvs");
-    set<UcClass> classes = parsing_classes();
     while (in) {
         string line;
         while(getline(in,line)) {
@@ -52,9 +51,8 @@ void parsing_schedules() {
         }
     }
 }
-void parsing_students() {
+void parsing_students(set<UcClass> classes) {
     ifstream in("students_classes.csv");
-    set<UcClass> classes = parsing_classes();
     set<Student> students;
     while (in) {
         string line;
