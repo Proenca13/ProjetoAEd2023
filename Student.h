@@ -13,8 +13,10 @@ public:
     Student(string name, string studentCode, Schedule schedule);
     string get_name() const;
     Schedule get_schedule() const;
+    string get_studentCode() const;
     void set_schedule(Schedule schedule);
     void set_name(string name);
+    void set_studentCode(string studentCode);
     bool operator<(Student student) const;
 
 private:
@@ -26,4 +28,3 @@ private:
 
 
 #endif //SCHEDULE_STUDENT_H
-

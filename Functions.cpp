@@ -8,6 +8,8 @@
 set<UcClass> parsing_classes(){
     ifstream in("classes_per_uc.csv");
     set<UcClass> classes;
+    string skip;
+    getline(in, skip);
     while(in){
         string line;
         while(getline(in,line)){
@@ -24,8 +26,11 @@ set<UcClass> parsing_classes(){
     }
     return classes;
 }
+
 void parsing_schedules(set<UcClass> classes) {
     ifstream in("classes.csv");
+    string skip;
+    getline(in, skip);
     while (in) {
         string line;
         while(getline(in,line)) {
@@ -45,15 +50,19 @@ void parsing_schedules(set<UcClass> classes) {
             Type = info[5];
             Lesson lesson(UcCode,Weekday,StartHour,Duration,Type);
             for (auto turma : classes){
-                if (turma.get_classCode() == ClassCode)turma.get_schedule().add_lesson(lesson);
+                if (turma.get_classCode() == ClassCode){
+                    turma.get_schedule().add_lesson(lesson);
+                }
             }
-
         }
     }
 }
+
 void parsing_students(set<UcClass> classes) {
     ifstream in("students_classes.csv");
     set<Student> students;
+    string skip;
+    getline(in, skip);
     while (in) {
         string line;
         while (getline(in, line)) {
@@ -64,15 +73,16 @@ void parsing_students(set<UcClass> classes) {
                 info.push_back(word);
             }
             string StudentCode, StudentName, UcCode, ClassCode;
-            info[0] = StudentCode;
-            info[1] = StudentName;
-            info[2] = UcCode;
-            info[3] = ClassCode;
+            StudentCode = info[0];
+            StudentName = info[1];
+            UcCode = info[2];
+            ClassCode = info[3];
             auto itr = students.begin();
             while (itr != students.end()) {
-                if (itr->get_name() == StudentName) {
+                if (itr->get_studentCode() == StudentCode) {
                     break;
                 }
+                itr++;
             }
             if (itr == students.end()) {
                 for (auto turma: classes) {
@@ -88,9 +98,13 @@ void parsing_students(set<UcClass> classes) {
             } else {
                 for (auto turma: classes) {
                     if (turma.get_classCode() == ClassCode) {
-                        for (auto aula: turma.get_schedule().get_lessons())itr->get_schedule().add_lesson(aula);
+                        for (auto aula: turma.get_schedule().get_lessons()){
+                            Schedule new_schedule = itr->get_schedule();
+                            students.erase(Student(StudentName,StudentCode,itr->get_schedule()));
+                            new_schedule.add_lesson(aula);
+                            students.insert(Student(StudentName,StudentCode,new_schedule));
+                        }
                     }
-
                 }
             }
         }
