@@ -6,7 +6,7 @@
 #include "Schedule.h"
 #include "Student.h"
 set<UcClass> parsing_classes(){
-    ifstream in("classes_per_uc.cvs");
+    ifstream in("classes_per_uc.csv");
     set<UcClass> classes;
     while(in){
         string line;
@@ -25,7 +25,7 @@ set<UcClass> parsing_classes(){
     return classes;
 }
 void parsing_schedules(set<UcClass> classes) {
-    ifstream in("classes.cvs");
+    ifstream in("classes.csv");
     while (in) {
         string line;
         while(getline(in,line)) {

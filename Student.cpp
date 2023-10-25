@@ -12,5 +12,5 @@ Schedule Student::get_schedule() const {return schedule_;}
 void Student::set_name(std::string name) {name_ = name;}
 void Student::set_schedule(Schedule schedule) {schedule_ = schedule;}
 bool Student::operator<(Student student) const{
-    return name_ < student.get_name();
+    return studentCode_ < student.get_;
 }
