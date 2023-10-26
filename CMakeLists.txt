@@ -11,5 +11,5 @@ add_executable(
         UcClass.cpp
         Lesson.cpp
         Functions.cpp
-        schedule_manager.cpp
+        Schedule_Manager.cpp
 )
