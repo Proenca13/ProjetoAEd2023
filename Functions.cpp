@@ -95,7 +95,9 @@ set<Student> parsing_students(set<UcClass> classes) {
                             if (UcCode == aula.get_uc_code()) {
                                 Schedule schedule;
                                 schedule.add_lesson(aula);
-                                temp_students.push_back(Student(StudentName,StudentCode,schedule));
+                                Student student(StudentName,StudentCode,schedule);
+                                student.add_belong_class(ClassCode);
+                                temp_students.push_back(student);
                                 break;
                             }
                         }
@@ -110,6 +112,7 @@ set<Student> parsing_students(set<UcClass> classes) {
                                 Schedule schedule = itr->get_schedule();
                                 schedule.add_lesson(aula);
                                 itr->set_schedule(schedule);
+                                itr->add_belong_class(ClassCode);
                             }
                         }
                     }

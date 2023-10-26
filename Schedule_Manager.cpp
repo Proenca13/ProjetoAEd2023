@@ -78,11 +78,59 @@ void Schedule_Manager::consult_students() {
     cout << "Choose the option you want to do: ";
     int i;
     cin >> i;
-    if(i== 1);
-    else if(i == 2);
-    else if(i==3);
+    if(i== 1){
+        cout << "Code of the class: ";
+        string ClassCode;
+        cin >> ClassCode;
+        unordered_map<string,vector<string>> student_class;
+        for(auto student:students){
+            for(auto turma: student.get_belong_class())student_class[turma].push_back(student.get_name());
+        }
+        for(auto student:student_class[ClassCode]){
+            cout << student << '\n';
+        }
+    }
+    else if(i == 2){
+    }
+    else if(i==3){
+        cout << "Year: ";
+        string year;
+        cin >> year;
+        unordered_map<string,vector<string>> student_year;
+        for(auto student:students){
+            set<string> turmas = student.get_belong_class();
+            auto maxElement = max_element(turmas.begin(),turmas.end());
+            if((*maxElement)[0] == '1'){
+                student_year["1"].push_back(student.get_name());
+            }
+            else if((*maxElement)[0] == '2'){
+                student_year["2"].push_back(student.get_name());
+            }
+            else if((*maxElement)[0] == '3'){
+                student_year["3"].push_back(student.get_name());
+            }
+        }
+        for(auto student:student_year[year]){
+            cout << student << '\n';
+        }
+    }
     else if(i==4);
     else
         cout << "Invalid input!"<< '\n';
 
+}
+void Schedule_Manager::number_students() {
+    cout << "Number of ucs: ";
+    int i;
+    cin >> i;
+    int res=0;
+    for(auto aluno:students){
+        vector<Lesson> aulas = aluno.get_schedule().get_lessons();
+        set<string> ucs;
+        for (auto aula : aulas){
+            ucs.insert(aula.get_uc_code());
+        }
+        if(ucs.size()==i)res++;
+    }
+    cout << "The number of students registered in " << i << " ucs is " << res<<'\n';
 }

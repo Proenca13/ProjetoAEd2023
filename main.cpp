@@ -27,7 +27,7 @@ int main() {
                             schedulemanager.consult_students();
                             break;
                         case 3:
-                            cout << "3";
+                            schedulemanager.number_students();
                             break;
                         case 4:
                             cout << "4";

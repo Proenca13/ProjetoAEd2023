@@ -17,7 +17,6 @@ public:
     void set_classCode(string classCode);
     void set_schedule(Schedule schedule);
     bool operator<(UcClass uclass) const;
-
 private:
     string classCode_;
     Schedule schedule_;

@@ -11,6 +11,9 @@
 #include "Schedule.h"
 #include <set>
 #include "Functions.h"
+#include <unordered_map>
+#include <string>
+#include <algorithm>
 class Schedule_Manager {
 public:
     Schedule_Manager();
@@ -18,6 +21,7 @@ public:
     void consult();
     void consult_schedule();
     void consult_students();
+    void number_students();
 private:
     set<UcClass> classes;
     set<Student> students;
