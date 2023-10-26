@@ -3,15 +3,13 @@ project(schedule)
 
 set(CMAKE_CXX_STANDARD 17)
 
-
-
-add_executable(schedule main.cpp Student.cpp Student.h
-        Schedule.h
-        UcClass.h
-        UcClass.cpp
+add_executable(
+        schedule
+        main.cpp
+        Student.cpp
         Schedule.cpp
+        UcClass.cpp
         Lesson.cpp
-        Functions.h
-        schedule_manager.h
         Functions.cpp
+        schedule_manager.cpp
 )

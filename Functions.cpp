@@ -5,8 +5,12 @@
 #include "Lesson.h"
 #include "Schedule.h"
 #include "Student.h"
+#include <list>
+#include <algorithm>
+using namespace std;
 set<UcClass> parsing_classes(){
-    ifstream in("classes_per_uc.csv");
+    ifstream in;
+    in.open("../Read_Info/classes_per_uc.csv");
     set<UcClass> classes;
     string skip;
     getline(in, skip);
@@ -14,99 +18,102 @@ set<UcClass> parsing_classes(){
         string line;
         while(getline(in,line)){
             stringstream read(line);
-            string word;
-            vector<string> info;
-            while (getline(read, word, ',')) {
-                info.push_back(word);
-            }
+            string UcCode,ClassCode;
+            getline(read,UcCode,',');
+            getline(read,ClassCode,'\r');
             Schedule schedule;
-            UcClass uclass(info[1], schedule);
+            UcClass uclass(ClassCode, schedule);
             classes.insert(uclass);
         }
     }
+    in.close();
     return classes;
 }
 
-void parsing_schedules(set<UcClass> classes) {
-    ifstream in("classes.csv");
+set<UcClass> parsing_schedules(set<UcClass> classes) {
+    ifstream in;
+    in.open("../Read_Info/classes.csv");
     string skip;
     getline(in, skip);
     while (in) {
         string line;
         while(getline(in,line)) {
             stringstream read(line);
-            string word;
-            vector<string> info;
-            while (getline(read, word, ',')) {
-                info.push_back(word);
-            }
             string ClassCode,UcCode,Weekday,Type;
             float StartHour,Duration;
-            ClassCode = info[0];
-            UcCode = info[1];
-            Weekday = info[2];
-            StartHour = stof(info[3]);
-            Duration = stof(info[4]);
-            Type = info[5];
+            getline(read,ClassCode,',');
+            getline(read,UcCode,',');
+            getline(read,Weekday,',');
+            read >> StartHour;
+            read.ignore(1);
+            read >> Duration;
+            read.ignore(1);
+            getline(read,Type,'\r');
             Lesson lesson(UcCode,Weekday,StartHour,Duration,Type);
             for (auto turma : classes){
                 if (turma.get_classCode() == ClassCode){
-                    turma.get_schedule().add_lesson(lesson);
+                    Schedule schedule;
+                    schedule = turma.get_schedule();
+                    classes.erase(UcClass(ClassCode,schedule));
+                    schedule.add_lesson(lesson);
+                    classes.insert(UcClass(ClassCode,schedule));
                 }
             }
         }
     }
+    in.close();
+    return classes;
 }
 
-void parsing_students(set<UcClass> classes) {
-    ifstream in("students_classes.csv");
+set<Student> parsing_students(set<UcClass> classes) {
+    ifstream in;
+    in.open("../Read_Info/students_classes.csv");
     set<Student> students;
+    list<Student> temp_students;
     string skip;
     getline(in, skip);
     while (in) {
         string line;
         while (getline(in, line)) {
             stringstream read(line);
-            string word;
-            vector<string> info;
-            while (getline(read, word, ',')) {
-                info.push_back(word);
-            }
             string StudentCode, StudentName, UcCode, ClassCode;
-            StudentCode = info[0];
-            StudentName = info[1];
-            UcCode = info[2];
-            ClassCode = info[3];
-            auto itr = students.begin();
-            while (itr != students.end()) {
-                if (itr->get_studentCode() == StudentCode) {
+            getline(read,StudentCode,',');
+            getline(read,StudentName,',');
+            getline(read,UcCode,',');
+            getline(read,ClassCode,'\r');
+            auto itr = temp_students.begin();
+            while(itr!=temp_students.end()){
+                if(itr->get_studentCode()== StudentCode){
                     break;
                 }
                 itr++;
             }
-            if (itr == students.end()) {
+            if (itr == temp_students.end()) {
                 for (auto turma: classes) {
                     if (turma.get_classCode() == ClassCode) {
-                        for (auto aula: turma.get_schedule().get_lessons())
+                        for (auto aula: turma.get_schedule().get_lessons()){
                             if (UcCode == aula.get_uc_code()) {
                                 Schedule schedule;
                                 schedule.add_lesson(aula);
-                                students.insert(Student(StudentName, StudentCode, schedule));
+                                temp_students.push_back(Student(StudentName,StudentCode,schedule));
                             }
+                        }
                     }
                 }
             } else {
                 for (auto turma: classes) {
                     if (turma.get_classCode() == ClassCode) {
                         for (auto aula: turma.get_schedule().get_lessons()){
-                            Schedule new_schedule = itr->get_schedule();
-                            students.erase(Student(StudentName,StudentCode,itr->get_schedule()));
-                            new_schedule.add_lesson(aula);
-                            students.insert(Student(StudentName,StudentCode,new_schedule));
+                            itr->get_schedule().add_lesson(aula);
                         }
                     }
                 }
             }
         }
     }
+    for(auto i :temp_students){
+        students.insert(i);
+    }
+    in.close();
+    return students;
 }

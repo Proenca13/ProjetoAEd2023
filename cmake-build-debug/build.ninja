@@ -61,14 +61,14 @@ build CMakeFiles/schedule.dir/Student.cpp.o: CXX_COMPILER__schedule_unscanned_De
   OBJECT_DIR = CMakeFiles/schedule.dir
   OBJECT_FILE_DIR = CMakeFiles/schedule.dir
 
-build CMakeFiles/schedule.dir/UcClass.cpp.o: CXX_COMPILER__schedule_unscanned_Debug /home/joao/Desktop/AED/schedule/UcClass.cpp || cmake_object_order_depends_target_schedule
-  DEP_FILE = CMakeFiles/schedule.dir/UcClass.cpp.o.d
+build CMakeFiles/schedule.dir/Schedule.cpp.o: CXX_COMPILER__schedule_unscanned_Debug /home/joao/Desktop/AED/schedule/Schedule.cpp || cmake_object_order_depends_target_schedule
+  DEP_FILE = CMakeFiles/schedule.dir/Schedule.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/schedule.dir
   OBJECT_FILE_DIR = CMakeFiles/schedule.dir
 
-build CMakeFiles/schedule.dir/Schedule.cpp.o: CXX_COMPILER__schedule_unscanned_Debug /home/joao/Desktop/AED/schedule/Schedule.cpp || cmake_object_order_depends_target_schedule
-  DEP_FILE = CMakeFiles/schedule.dir/Schedule.cpp.o.d
+build CMakeFiles/schedule.dir/UcClass.cpp.o: CXX_COMPILER__schedule_unscanned_Debug /home/joao/Desktop/AED/schedule/UcClass.cpp || cmake_object_order_depends_target_schedule
+  DEP_FILE = CMakeFiles/schedule.dir/UcClass.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/schedule.dir
   OBJECT_FILE_DIR = CMakeFiles/schedule.dir
@@ -85,6 +85,12 @@ build CMakeFiles/schedule.dir/Functions.cpp.o: CXX_COMPILER__schedule_unscanned_
   OBJECT_DIR = CMakeFiles/schedule.dir
   OBJECT_FILE_DIR = CMakeFiles/schedule.dir
 
+build CMakeFiles/schedule.dir/schedule_manager.cpp.o: CXX_COMPILER__schedule_unscanned_Debug /home/joao/Desktop/AED/schedule/schedule_manager.cpp || cmake_object_order_depends_target_schedule
+  DEP_FILE = CMakeFiles/schedule.dir/schedule_manager.cpp.o.d
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/schedule.dir
+  OBJECT_FILE_DIR = CMakeFiles/schedule.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target schedule
@@ -93,7 +99,7 @@ build CMakeFiles/schedule.dir/Functions.cpp.o: CXX_COMPILER__schedule_unscanned_
 #############################################
 # Link the executable schedule
 
-build schedule: CXX_EXECUTABLE_LINKER__schedule_Debug CMakeFiles/schedule.dir/main.cpp.o CMakeFiles/schedule.dir/Student.cpp.o CMakeFiles/schedule.dir/UcClass.cpp.o CMakeFiles/schedule.dir/Schedule.cpp.o CMakeFiles/schedule.dir/Lesson.cpp.o CMakeFiles/schedule.dir/Functions.cpp.o
+build schedule: CXX_EXECUTABLE_LINKER__schedule_Debug CMakeFiles/schedule.dir/main.cpp.o CMakeFiles/schedule.dir/Student.cpp.o CMakeFiles/schedule.dir/Schedule.cpp.o CMakeFiles/schedule.dir/UcClass.cpp.o CMakeFiles/schedule.dir/Lesson.cpp.o CMakeFiles/schedule.dir/Functions.cpp.o CMakeFiles/schedule.dir/schedule_manager.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/schedule.dir
   POST_BUILD = :

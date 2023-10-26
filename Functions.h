@@ -6,8 +6,10 @@
 #include <fstream>
 #include <sstream>
 #include "UcClass.h"
+#include "Student.h"
 using namespace  std;
 set<UcClass> parsing_classes() ;
-void parsing_schedules(set<UcClass> classes);
-void parsing_students(set<UcClass> classes);
+set<UcClass> parsing_schedules(set<UcClass> classes);
+set<Student> parsing_students(set<UcClass> classes);
+
 #endif
