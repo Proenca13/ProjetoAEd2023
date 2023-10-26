@@ -137,9 +137,9 @@ void Schedule_Manager::number_students() {
         int res = 0;
         for (auto aluno: students) {
             set<string> ucs = aluno.get_belong_ucs();
-            if (ucs.size() == i-'0')res++;
+            if (ucs.size() >= i-'0')res++;
         }
-        cout << "The number of students registered in " << i << " ucs is " << res << '\n';
+        cout << "The number of students registered in ate least " << i << " ucs is " << res << '\n';
     }
     else cout << "Invalid input!" << '\n';
     }
