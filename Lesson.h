@@ -7,6 +7,7 @@
 #define LESSON_H
 
 #include <string>
+#include <iostream>
 using namespace std;
 //class that represents each individual lesson.
 class Lesson {

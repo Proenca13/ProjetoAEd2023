@@ -21,10 +21,10 @@ int main() {
                     bool close_consult = false;
                     switch(k){
                         case 1:
-                            cout << "1";
+                            schedulemanager.consult_schedule();
                             break;
                         case 2:
-                            cout << "2";
+                            schedulemanager.consult_students();
                             break;
                         case 3:
                             cout << "3";

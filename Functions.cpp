@@ -96,15 +96,21 @@ set<Student> parsing_students(set<UcClass> classes) {
                                 Schedule schedule;
                                 schedule.add_lesson(aula);
                                 temp_students.push_back(Student(StudentName,StudentCode,schedule));
+                                break;
                             }
                         }
+                        break;
                     }
                 }
             } else {
                 for (auto turma: classes) {
                     if (turma.get_classCode() == ClassCode) {
                         for (auto aula: turma.get_schedule().get_lessons()){
-                            itr->get_schedule().add_lesson(aula);
+                            if (UcCode == aula.get_uc_code()){
+                                Schedule schedule = itr->get_schedule();
+                                schedule.add_lesson(aula);
+                                itr->set_schedule(schedule);
+                            }
                         }
                     }
                 }

@@ -9,12 +9,18 @@
 #include "Lesson.h"
 #include "UcClass.h"
 #include "Schedule.h"
+#include <set>
+#include "Functions.h"
 class Schedule_Manager {
 public:
     Schedule_Manager();
     void print_menu();
     void consult();
-    Schedule consult_schedule();
+    void consult_schedule();
+    void consult_students();
+private:
+    set<UcClass> classes;
+    set<Student> students;
 };
 
 
