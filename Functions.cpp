@@ -11,6 +11,9 @@ using namespace std;
 set<UcClass> parsing_classes(){
     ifstream in;
     in.open("../Read_Info/classes_per_uc.csv");
+    if (!in.is_open()){
+        cout << "File not found\n";
+    }
     set<UcClass> classes;
     string skip;
     getline(in, skip);
@@ -33,6 +36,9 @@ set<UcClass> parsing_classes(){
 set<UcClass> parsing_schedules(set<UcClass> classes) {
     ifstream in;
     in.open("../Read_Info/classes.csv");
+    if (!in.is_open()){
+        cout << "File not found\n";
+    }
     string skip;
     getline(in, skip);
     while (in) {
@@ -68,6 +74,9 @@ set<UcClass> parsing_schedules(set<UcClass> classes) {
 set<Student> parsing_students(set<UcClass> classes) {
     ifstream in;
     in.open("../Read_Info/students_classes.csv");
+    if (!in.is_open()){
+        cout << "File not found\n";
+    }
     set<Student> students;
     list<Student> temp_students;
     string skip;
