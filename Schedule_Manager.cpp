@@ -91,6 +91,16 @@ void Schedule_Manager::consult_students() {
         }
     }
     else if(i == 2){
+        cout << "Code of the Uc: ";
+        string UcCode;
+        cin >> UcCode;
+        unordered_map<string,vector<string>> student_ucs;
+        for(auto student: students){
+            for(auto course:student.get_belong_ucs())student_ucs[course].push_back(student.get_name());
+        }
+        for (auto student:student_ucs[UcCode]){
+            cout << student << '\n';
+        }
     }
     else if(i==3){
         cout << "Year: ";
@@ -125,12 +135,38 @@ void Schedule_Manager::number_students() {
     cin >> i;
     int res=0;
     for(auto aluno:students){
-        vector<Lesson> aulas = aluno.get_schedule().get_lessons();
-        set<string> ucs;
-        for (auto aula : aulas){
-            ucs.insert(aula.get_uc_code());
-        }
+        set<string> ucs = aluno.get_belong_ucs();
         if(ucs.size()==i)res++;
     }
     cout << "The number of students registered in " << i << " ucs is " << res<<'\n';
+}
+void Schedule_Manager::uc_most_students() {
+    stack<string> ucs;
+    unordered_map<string,vector<string>> student_ucs;
+    int max = 0;
+    for(auto student: students){
+        for(auto course:student.get_belong_ucs())student_ucs[course].push_back(student.get_name());
+    }
+    for(auto pair:student_ucs){
+        string uc = pair.first;
+        vector<string> alunos = pair.second;
+        if(ucs.empty()){
+            ucs.push(uc);
+            max = alunos.size();
+        }
+        else if(alunos.size()> max){
+            max = alunos.size();
+            while(!ucs.empty())ucs.pop();
+            ucs.push(uc);
+        }
+        else if(alunos.size()== max){
+            ucs.push(uc);
+        }
+
+    }
+    while(!ucs.empty()){
+        cout << ucs.top() << '\n';
+        ucs.pop();
+    }
+
 }

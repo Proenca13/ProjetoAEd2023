@@ -14,6 +14,7 @@
 #include <unordered_map>
 #include <string>
 #include <algorithm>
+#include <stack>
 class Schedule_Manager {
 public:
     Schedule_Manager();
@@ -22,6 +23,7 @@ public:
     void consult_schedule();
     void consult_students();
     void number_students();
+    void uc_most_students();
 private:
     set<UcClass> classes;
     set<Student> students;

@@ -97,6 +97,7 @@ set<Student> parsing_students(set<UcClass> classes) {
                                 schedule.add_lesson(aula);
                                 Student student(StudentName,StudentCode,schedule);
                                 student.add_belong_class(ClassCode);
+                                student.add_belong_ucs(UcCode);
                                 temp_students.push_back(student);
                                 break;
                             }
@@ -113,6 +114,7 @@ set<Student> parsing_students(set<UcClass> classes) {
                                 schedule.add_lesson(aula);
                                 itr->set_schedule(schedule);
                                 itr->add_belong_class(ClassCode);
+                                itr->add_belong_ucs(UcCode);
                             }
                         }
                     }

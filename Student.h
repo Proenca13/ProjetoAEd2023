@@ -16,8 +16,11 @@ public:
     Schedule get_schedule() const;
     string get_studentCode() const;
     set<string> get_belong_class() const;
+    set<string> get_belong_ucs() const;
     void add_belong_class(string turma);
+    void add_belong_ucs(string uc);
     void set_belong_class(set <string> belong_class);
+    void set_belong_ucs(set <string> belong_ucs);
     void set_schedule(Schedule schedule);
     void set_name(string name);
     void set_studentCode(string studentCode);
@@ -28,6 +31,7 @@ private:
     string studentCode_;
     Schedule schedule_;
     set <string> belong_class_;
+    set <string> belong_ucs_;
 };
 
 

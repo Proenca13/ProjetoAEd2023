@@ -33,7 +33,7 @@ int main() {
                             cout << "4";
                             break;
                         case 5:
-                            cout << "5";
+                            schedulemanager.uc_most_students();
                             break;
                         case 6:
                             close_consult = true;
