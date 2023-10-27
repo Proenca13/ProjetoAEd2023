@@ -1,8 +1,4 @@
 #include <iostream>
-#include <set>
-#include "Functions.h"
-#include "UcClass.h"
-#include "Student.h"
 #include "Schedule_Manager.h"
 
 int main() {
@@ -45,20 +41,39 @@ int main() {
                 }
                 break;
             case '2':
-                cout << "Request";
+                while(true){
+                    schedulemanager.request();
+                    char k;
+                    cin >> k;
+                    bool close_request = false;
+                    switch (k) {
+                        case '1':
+                            cout << "Add" ;
+                            break;
+                        case '2':
+                            cout << "Remove";
+                            break;
+                        case '3':
+                            cout << "Switch";
+                            break;
+                        case '4':
+                            close_request = true;
+                            break;
+                        default:
+                            cout << "Invalid input!"<<'\n';
+                    }
+                    if(close_request)break;
+                }
                 break;
             case '3':
                 close = true;
+                break;
             default:
                 cout << "Invalid input!"<<'\n';
-                break;
+
         }
         if (close)break;
     }
-
-
-
-
     return 0;
 }
 

@@ -24,6 +24,7 @@ public:
     void consult_students();
     void number_students();
     void uc_most_students();
+    void request();
 private:
     set<UcClass> classes;
     set<Student> students;

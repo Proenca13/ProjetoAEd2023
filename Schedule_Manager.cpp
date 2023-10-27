@@ -12,28 +12,28 @@ Schedule_Manager::Schedule_Manager(){
 }
 void Schedule_Manager::print_menu() {
     cout << "--------------------Menu--------------------"<< '\n';
-    cout << "|               1- Consult                 |"<<'\n';
-    cout << "|               2- Request                 |"<< '\n';
-    cout << "|               3- Quit                    |" << '\n';
+    cout << "|                1-Consult                 |"<<'\n';
+    cout << "|                2-Request                 |"<< '\n';
+    cout << "|                3-Quit                    |" << '\n';
     cout << "--------------------------------------------"<< '\n';
     cout << "Choose the option you want to do: ";
 }
 void Schedule_Manager::consult() {
     cout << "----------------------------Consult Menu----------------------------"<< '\n';
-    cout << "| 1- Consult the schedule of a given student or class              |"<<'\n';
-    cout << "| 2- Consult the students within a given class, course or year     |"<< '\n';
-    cout << "| 3- Consult the number of students registered in at least n UCs   |" << '\n';
-    cout << "| 4- Consult the class/year/UC occupation                          |" << '\n';
-    cout << "| 5- Consult the UCs with the greatest number of students          |" << '\n';
-    cout << "| 6- Menu                                                          |" << '\n';
+    cout << "| 1-Consult the schedule of a given student or class              |"<<'\n';
+    cout << "| 2-Consult the students within a given class, course or year     |"<< '\n';
+    cout << "| 3-Consult the number of students registered in at least n UCs   |" << '\n';
+    cout << "| 4-Consult the class/year/UC occupation                          |" << '\n';
+    cout << "| 5-Consult the UCs with the greatest number of students          |" << '\n';
+    cout << "| 6-Menu                                                          |" << '\n';
     cout << "--------------------------------------------------------------------"<< '\n';
     cout << "Choose the option you want to do: ";
 }
 void Schedule_Manager::consult_schedule() {
     cout << "----------------Choose one----------------"<<'\n';
-    cout << "|              1-student                 |"<<'\n';
-    cout << "|              2-class                   |"<<'\n';
-    cout << "|              3-back                    |"<<'\n';
+    cout << "|              1-Student                 |"<<'\n';
+    cout << "|              2-Class                   |"<<'\n';
+    cout << "|              3-Back                    |"<<'\n';
     cout << "------------------------------------------"<<'\n';
     cout << "Choose the option you want to do: ";
     char i;
@@ -70,10 +70,10 @@ void Schedule_Manager::consult_schedule() {
 }
 void Schedule_Manager::consult_students() {
     cout << "----------------Choose one----------------"<<'\n';
-    cout << "|              1-class                   |"<<'\n';
-    cout << "|              2-course                  |"<<'\n';
-    cout << "|              3-year                    |"<<'\n';
-    cout << "|              4-back                    |"<<'\n';
+    cout << "|              1-Class                   |"<<'\n';
+    cout << "|              2-Course                  |"<<'\n';
+    cout << "|              3-Year                    |"<<'\n';
+    cout << "|              4-Back                    |"<<'\n';
     cout << "------------------------------------------"<<'\n';
     cout << "Choose the option you want to do: ";
     char i;
@@ -171,4 +171,12 @@ void Schedule_Manager::uc_most_students(){
         ucs.pop();
     }
    }
-
+void Schedule_Manager::request() {
+        cout << "------------------------Request------------------------"<< '\n';
+        cout << "|                      1-Add                          |"<<'\n';
+        cout << "|                      2-Remove                       |"<< '\n';
+        cout << "|                      3-Switch                       |" << '\n';
+        cout << "|                      4-Menu                        |" << '\n';
+        cout << "-------------------------------------------------------"<< '\n';
+        cout << "Choose the option you want to do: ";
+}
