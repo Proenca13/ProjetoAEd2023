@@ -7,6 +7,7 @@
 
 #include <vector>
 #include "Lesson.h"
+#include <algorithm>
 using namespace std;
 
 class Schedule {
@@ -14,6 +15,7 @@ public:
     Schedule();
     void set_lessons(vector<Lesson> lessons);
     void add_lesson(Lesson lesson);
+    void remove_lesson(Lesson lesson);
     vector<Lesson> get_lessons() const;
 private:
     vector<Lesson> lessons_;

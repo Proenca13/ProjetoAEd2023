@@ -26,7 +26,7 @@ int main() {
                             schedulemanager.number_students();
                             break;
                         case '4':
-                            cout << "4";
+                            schedulemanager.consult_occuption();
                             break;
                         case '5':
                             schedulemanager.uc_most_students();
@@ -47,15 +47,18 @@ int main() {
                     cin >> k;
                     bool close_request = false;
                     switch (k) {
-                        case '1':
-                            cout << "Add" ;
+                        case '1': {
+                            schedulemanager.add_uc();
                             break;
-                        case '2':
-                            cout << "Remove";
+                        }
+                        case '2': {
+                            schedulemanager.remove_uc();
                             break;
-                        case '3':
-                            cout << "Switch";
+                        }
+                        case '3': {
+                            schedulemanager.switch_uc();
                             break;
+                        }
                         case '4':
                             close_request = true;
                             break;
@@ -66,6 +69,9 @@ int main() {
                 }
                 break;
             case '3':
+                schedulemanager.print_history();
+                break;
+            case '4':
                 close = true;
                 break;
             default:
@@ -76,4 +82,3 @@ int main() {
     }
     return 0;
 }
-

@@ -55,7 +55,7 @@ set<UcClass> parsing_schedules(set<UcClass> classes) {
             read >> Duration;
             read.ignore(1);
             getline(read,Type,'\r');
-            Lesson lesson(UcCode,Weekday,StartHour,Duration,Type);
+            Lesson lesson(UcCode,Weekday,StartHour,Duration,Type, ClassCode);
             for (auto turma : classes){
                 if (turma.get_classCode() == ClassCode){
                     Schedule schedule;
@@ -75,7 +75,7 @@ set<Student> parsing_students(set<UcClass> classes) {
     ifstream in;
     in.open("../Read_Info/students_classes.csv");
     if (!in.is_open()){
-        cout << "File not found"<<'\n';
+        cout << "File not found!"<<'\n';
     }
     set<Student> students;
     list<Student> temp_students;
@@ -105,8 +105,6 @@ set<Student> parsing_students(set<UcClass> classes) {
                                 Schedule schedule;
                                 schedule.add_lesson(aula);
                                 Student student(StudentName,StudentCode,schedule);
-                                student.add_belong_class(ClassCode);
-                                student.add_belong_ucs(UcCode);
                                 temp_students.push_back(student);
                                 break;
                             }
@@ -122,8 +120,6 @@ set<Student> parsing_students(set<UcClass> classes) {
                                 Schedule schedule = itr->get_schedule();
                                 schedule.add_lesson(aula);
                                 itr->set_schedule(schedule);
-                                itr->add_belong_class(ClassCode);
-                                itr->add_belong_ucs(UcCode);
                             }
                         }
                     }

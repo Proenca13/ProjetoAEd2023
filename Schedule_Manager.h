@@ -15,6 +15,7 @@
 #include <string>
 #include <algorithm>
 #include <stack>
+#include <queue>
 class Schedule_Manager {
 public:
     Schedule_Manager();
@@ -23,11 +24,17 @@ public:
     void consult_schedule();
     void consult_students();
     void number_students();
+    void consult_occuption();
     void uc_most_students();
+    void add_uc();
+    void remove_uc();
+    void switch_uc();
     void request();
+    void print_history();
 private:
     set<UcClass> classes;
     set<Student> students;
+    queue <string> changes;
 };
 
 
