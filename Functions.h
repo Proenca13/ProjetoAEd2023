@@ -7,9 +7,9 @@
 #include <sstream>
 #include "UcClass.h"
 #include "Student.h"
+#include <iomanip>
 using namespace  std;
 set<UcClass> parsing_classes() ;
 set<UcClass> parsing_schedules(set<UcClass> classes);
 set<Student> parsing_students(set<UcClass> classes);
-
 #endif

@@ -56,7 +56,7 @@ int main() {
                             break;
                         }
                         case '3': {
-                            schedulemanager.switch_uc();
+                            schedulemanager.switch_students();
                             break;
                         }
                         case '4':

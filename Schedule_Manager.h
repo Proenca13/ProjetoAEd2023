@@ -16,6 +16,8 @@
 #include <algorithm>
 #include <stack>
 #include <queue>
+#include <utility>
+#include <iomanip>
 class Schedule_Manager {
 public:
     Schedule_Manager();
@@ -28,13 +30,23 @@ public:
     void uc_most_students();
     void add_uc();
     void remove_uc();
-    void switch_uc();
+    void switch_students();
     void request();
     void print_history();
 private:
     set<UcClass> classes;
     set<Student> students;
     queue <string> changes;
+    map<pair<string,string>,vector<string>> get_uc_class();
+    int get_min_attendance(string UcCode);
+    bool check_student(string StudentCode);
+    bool check_class(string ClassCode);
+    bool check_uc(string UcCode);
+    void undo_add(string StudentCode ,string UcCode,string ClassCode);
+    void undo_remove(string StudentCode ,string UcCode,string ClassCode);
+    void undo_switch(string StudentCode ,string UcCode,string ClassCode);
+
+
 };
 
 
