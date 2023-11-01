@@ -3,6 +3,7 @@
 
 int main() {
     Schedule_Manager schedulemanager;
+    schedulemanager.load_request();
     while(true){
         schedulemanager.print_menu();
         char i;
@@ -73,6 +74,7 @@ int main() {
                 break;
             case '4':
                 close = true;
+                schedulemanager.save_requests();
                 break;
             default:
                 cout << "Invalid input!"<<'\n';

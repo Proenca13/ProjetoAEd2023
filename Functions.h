@@ -12,4 +12,5 @@ using namespace  std;
 set<UcClass> parsing_classes() ;
 set<UcClass> parsing_schedules(set<UcClass> classes);
 set<Student> parsing_students(set<UcClass> classes);
+void print_shedule(vector<Lesson>lessons);
 #endif

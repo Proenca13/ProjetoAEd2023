@@ -133,3 +133,4 @@ set<Student> parsing_students(set<UcClass> classes) {
     in.close();
     return students;
 }
+void print_schedule(vector<Lesson>lessons){}

@@ -384,7 +384,6 @@ void Schedule_Manager::request() {
     cout << "-------------------------------------------------------"<< '\n';
     cout << "Choose the option you want to do: ";
 }
-
 void Schedule_Manager::add_uc() {
     string StudentCode;
     cout << "Student code? ";
@@ -450,7 +449,7 @@ void Schedule_Manager::add_uc() {
     students.erase(user);
     user.set_schedule(schedule);
     students.insert(user);
-    string change = "Added student " + StudentCode + " to class " + ClassCode + " in Uc " + UcCode + "!    ";
+    string change = "Added student " + StudentCode + " to class " + ClassCode + " in Uc " + UcCode + "!                                     ";
     cout << change << '\n';
     changes.push(change);
 }
@@ -492,7 +491,7 @@ void Schedule_Manager::remove_uc(){
     int min = get_min_attendance(UcCode);
     map <pair<string,string >,vector<string>> uc_class = get_uc_class();
     int class_size = uc_class[{UcCode,ClassCode}].size();
-    if(class_size == min){
+    if(class_size <= min){
         cout << "Can´t remove from class!" << '\n';
         return;
     }
@@ -500,99 +499,105 @@ void Schedule_Manager::remove_uc(){
     students.erase(user);
     user.set_schedule(new_schedule);
     students.insert(user);
-    string change = "Removed student " + StudentCode + " from class " + ClassCode  + " in Uc " + UcCode + "!";
+    string change = "Removed student " + StudentCode + " from class " + ClassCode  + " in Uc " + UcCode + "!                                 ";
     cout << change << '\n';
     changes.push(change);
 
 }
 void Schedule_Manager::switch_students() {
-    Student user;
-    Lesson lesson_add, lesson_remove;
-    string StudentCode, UcCode1, UcCode2, ClassCode;
-    cout << "What is your Student code? ";
-    cin >> StudentCode;
-    bool exist = false;
-    for(const auto& student : students){
-        if(student.get_studentCode() == StudentCode){
-            user = student;
-            exist = true;
-            break;
-        }
-    }
-    if(!exist){
-        cout << "Student not found! \n";
-        return;
-    }
-    cout << "What is the UcCode of the lesson you want to remove? ";
-    cin >> UcCode1;
-    cout << "What is the UcCode and the class of the lesson you want to add? ";
-    cin >> UcCode2;
-    cin >> ClassCode;
-    exist = false;
-    string removed_class;
-    Schedule new_schedule = user.get_schedule();
-    for(auto lesson_ : user.get_schedule().get_lessons()){
-        if(lesson_.get_uc_code() == UcCode1){
-            exist = true;
-            lesson_remove = lesson_;
-            removed_class = lesson_.get_class_code();
-            break;
-        }
-    }
-    int min = get_min_attendance(UcCode1);
-    map <pair<string,string >,vector<string>> uc_class = get_uc_class();
-    int class_size = uc_class[{UcCode1,ClassCode}].size();
-    if(class_size == min ){
-        cout << "Can´t remove from class!";
-        return;
-    }
-    new_schedule.remove_lesson(lesson_remove);
-    if(!exist){
-        cout << "Could not find Uc! \n";
-        return;
-    }
-    bool done = false;
-    for(auto& turma : classes){
-        if(turma.get_classCode() == ClassCode && !done){
-            for(auto& lesson_ : turma.get_schedule().get_lessons()){
-                if(lesson_.get_uc_code() == UcCode2){
-                    lesson_add = lesson_;
-                    done = true;
+            Student user;
+            Lesson lesson_add, lesson_remove;
+            string StudentCode, UcCode1, UcCode2, ClassCode;
+            cout << "What is your Student code? ";
+            cin >> StudentCode;
+            bool exist = false;
+            for(const auto& student : students){
+                if(student.get_studentCode() == StudentCode){
+                    user = student;
+                    exist = true;
                     break;
                 }
             }
-        }
-        else{
-            break;
-        }
-    }
-    for(auto& lesson_ : user.get_schedule().get_lessons()){
-        if(lesson_.get_weekday() == lesson_add.get_weekday()){
-            if((lesson_add.get_start_time() + lesson_add.get_duration() > lesson_.get_start_time()) && (lesson_add.get_start_time() < lesson_.get_start_time() + lesson_.get_duration())){
-                cout << "Lesson Overlap, you can't add this lesson to your schedule. \n";
+            if(!exist){
+                cout << "Student not found! \n";
                 return;
             }
+            cout << "What is the UcCode of the lesson you want to remove? ";
+            cin >> UcCode1;
+            cout << "What is the UcCode of the lesson you want to add? ";
+            cin >> UcCode2;
+            cout << "What is the ClassCode of the class you want to be in? ";
+            cin >> ClassCode;
+            exist = false;
+            string removed_class;
+            Schedule new_schedule = user.get_schedule();
+            for(auto lesson_ : user.get_schedule().get_lessons()){
+                if(lesson_.get_uc_code() == UcCode1){
+                    exist = true;
+                    lesson_remove = lesson_;
+                    removed_class = lesson_.get_class_code();
+                    break;
+                }
+            }
+            if(!exist){
+                cout << "Could not find Uc to remove! \n";
+                return;
+            }
+            int min = get_min_attendance(UcCode1);
+            map <pair<string,string >,vector<string>> uc_class = get_uc_class();
+            int class_size = uc_class[{UcCode1,ClassCode}].size();
+            if(class_size == min ){
+                cout << "Can´t remove from class!";
+                return;
+            }
+            new_schedule.remove_lesson(lesson_remove);
+            exist = false;
+            bool done = false;
+            for(auto& turma : classes){
+                if(turma.get_classCode() == ClassCode ){
+                    for(auto& lesson_ : turma.get_schedule().get_lessons()){
+                        if(lesson_.get_uc_code() == UcCode2){
+                            lesson_add = lesson_;
+                            exist = true;
+                            done = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if(!exist){
+                cout << "Could not find Uc to add! \n";
+            }
+            for(auto& lesson_ : new_schedule.get_lessons()){
+                if(lesson_.get_weekday() == lesson_add.get_weekday()){
+                    if(lesson_.get_uc_code() == UcCode2){
+                        cout << "You're already in a Class in that Uc. \n";
+                        done = false;
+                    }
+                    if((lesson_add.get_start_time() + lesson_add.get_duration() > lesson_.get_start_time()) && (lesson_add.get_start_time() < lesson_.get_start_time() + lesson_.get_duration())){
+                        cout << "Lesson Overlap, you can't add this lesson to your schedule. \n";
+                        done = false;
+                    }
+                }
+            }
+            min = get_min_attendance(UcCode2);
+            class_size = uc_class[{UcCode2,ClassCode}].size();
+            if(class_size > min + 3){
+                cout << "Class full!";
+                done = false;
+            }
+            if (done) {
+                new_schedule.add_lesson(lesson_add);
+                students.erase(user);
+                user.set_schedule(new_schedule);
+                students.insert(user);
+                string change = "Switched student " + StudentCode + " from class " + removed_class + " in Uc " + UcCode1 +" to class " + ClassCode + " in Uc " + UcCode2 +"!";
+                cout << change << '\n';
+                changes.push(change);
+            }
         }
-        if(lesson_.get_uc_code() == UcCode2){
-            cout << "You're already in a Class in that Uc. \n";
-            return;
-        }
-    }
-    min = get_min_attendance(UcCode2);
-    class_size = uc_class[{UcCode2,ClassCode}].size();
-    if(class_size > min + 3){
-        cout << "Class full!";
-        return;
-    }
-    new_schedule.add_lesson(lesson_add);
-    students.erase(user);
-    user.set_schedule(new_schedule);
-    students.insert(user);
-    string change = "Switched student " + StudentCode + " from class " + removed_class  + " in Uc " + UcCode1 + "!";
-    cout << change << '\n';
-    changes.push(change);
 
-}
+
 void Schedule_Manager::undo_add(std::string StudentCode, std::string UcCode, std::string ClassCode) {
     Student user;
     Lesson lesson_remove;
@@ -612,7 +617,7 @@ void Schedule_Manager::undo_add(std::string StudentCode, std::string UcCode, std
     int min = get_min_attendance(UcCode);
     map <pair<string,string >,vector<string>> uc_class = get_uc_class();
     int class_size = uc_class[{UcCode,ClassCode}].size();
-    if(class_size == min){
+    if(class_size <= min){
         cout << "Can´t remove from class!" << '\n';
         return;
     }
@@ -674,6 +679,10 @@ void Schedule_Manager::undo_remove(std::string StudentCode, std::string UcCode, 
     user.set_schedule(schedule);
     students.insert(user);
 }
+void Schedule_Manager::undo_switch(string StudentCode,string from_ClassCode,string from_UcCode,string to_ClassCode,string to_UcCode) {
+    undo_add(StudentCode,to_UcCode,to_ClassCode);
+    undo_remove(StudentCode,from_UcCode,from_ClassCode);
+}
 void Schedule_Manager::print_history() {
     vector<string> historic;
     while(!(changes.empty())){
@@ -683,13 +692,13 @@ void Schedule_Manager::print_history() {
     }
     bool cloose = false;
     while (true){
-        cout << "-----------------------------Changes----------------------------" <<'\n';
+        cout << "---------------------------------------------Changes---------------------------------------------" <<'\n';
         int i = 1;
         for(auto change:historic){
             cout << "|"<<i<<"-"<<change<<'|'<<'\n';
             i++;
         }
-        cout << "----------------------------------------------------------------"<<'\n';
+        cout << "-------------------------------------------------------------------------------------------------"<<'\n';
         cout << "Do you want to undo the last change?(Y/N) ";
         char k;
         cin >> k;
@@ -703,6 +712,7 @@ void Schedule_Manager::print_history() {
                 }
                 if(Code[0]=="Added")undo_add(Code[2],Code[8].substr(0,Code[8].size()-1),Code[5]);
                 else if(Code[0]=="Removed")undo_remove(Code[2],Code[8].substr(0,Code[8].size()-1),Code[5]);
+                else undo_switch(Code[2],Code[5],Code[8],Code[11],Code[14].substr(0,Code[14].size()-1));
                 historic.erase(historic.end()-1);
             }
             else {
@@ -720,5 +730,39 @@ void Schedule_Manager::print_history() {
     }
     for (auto& change : historic)changes.push(change);
 }
+void Schedule_Manager::save_requests() {
+    ofstream out;
+    out.open("../Read_Info/requests.csv");
+    if (!out.is_open()){
+        cout << "File not found!"<<'\n';
+    }
+    while(!(changes.empty())){
+        out << changes.front()<< '\n';
+        changes.pop();
+    }
+}
+void Schedule_Manager::load_request() {
+    ifstream in;
+    in.open("../Read_Info/requests.csv");
+    if (!in.is_open()){
+        cout << "File not found!"<<'\n';
+    }
+    while(in){
+        string line;
+        while(getline(in,line)){
+            changes.push(line);
+            stringstream in(line);
+            vector <string> Code;
+            string word;
+            while(in >> word){
+                Code.push_back(word);
+            }
+            if(Code[0]=="Added")undo_remove(Code[2],Code[8].substr(0,Code[8].size()-1),Code[5]);
+            else if(Code[0]=="Removed")undo_add(Code[2],Code[8].substr(0,Code[8].size()-1),Code[5]);
+            else undo_switch(Code[2],Code[11],Code[14].substr(0,Code[14].size()-1),Code[5],Code[8]);
+        }
+    }
+}
+
 
 

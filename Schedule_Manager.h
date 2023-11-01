@@ -33,6 +33,8 @@ public:
     void switch_students();
     void request();
     void print_history();
+    void save_requests();
+    void load_request();
 private:
     set<UcClass> classes;
     set<Student> students;
@@ -44,9 +46,7 @@ private:
     bool check_uc(string UcCode);
     void undo_add(string StudentCode ,string UcCode,string ClassCode);
     void undo_remove(string StudentCode ,string UcCode,string ClassCode);
-    void undo_switch(string StudentCode ,string UcCode,string ClassCode);
-
-
+    void undo_switch(string StudentCode ,string from_ClassCode,string from_UcCode,string to_ClassCode,string to_UcCode);
 };
 
 
