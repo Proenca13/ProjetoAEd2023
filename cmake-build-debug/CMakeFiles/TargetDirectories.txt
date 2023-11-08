@@ -1,3 +1,4 @@
-/home/joao/Desktop/AED/schedule/cmake-build-debug/CMakeFiles/schedule.dir
-/home/joao/Desktop/AED/schedule/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/joao/Desktop/AED/schedule/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/joao/Desktop/AED/AED2324_PRJ1_G10/schedule/cmake-build-debug/CMakeFiles/Doxygen.dir
+/home/joao/Desktop/AED/AED2324_PRJ1_G10/schedule/cmake-build-debug/CMakeFiles/schedule.dir
+/home/joao/Desktop/AED/AED2324_PRJ1_G10/schedule/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/joao/Desktop/AED/AED2324_PRJ1_G10/schedule/cmake-build-debug/CMakeFiles/rebuild_cache.dir

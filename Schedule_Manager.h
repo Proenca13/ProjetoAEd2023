@@ -40,13 +40,14 @@ private:
     set<Student> students;
     queue <string> changes;
     map<pair<string,string>,vector<string>> get_uc_class();
+    void upper(string& word);
     int get_min_attendance(string UcCode);
     bool check_student(string StudentCode);
     bool check_class(string ClassCode);
     bool check_uc(string UcCode);
-    void undo_add(string StudentCode ,string UcCode,string ClassCode);
-    void undo_remove(string StudentCode ,string UcCode,string ClassCode);
-    void undo_switch(string StudentCode ,string from_ClassCode,string from_UcCode,string to_ClassCode,string to_UcCode);
+    void automatic_remove(string StudentCode ,string UcCode,string ClassCode);
+    void automatic_add(string StudentCode ,string UcCode,string ClassCode);
+    void automatic_switch(string StudentCode ,string from_ClassCode,string from_UcCode,string to_ClassCode,string to_UcCode);
 };
 
 

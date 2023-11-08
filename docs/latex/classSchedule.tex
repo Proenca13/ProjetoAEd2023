@@ -1,0 +1,141 @@
+\hypertarget{classSchedule}{}\doxysection{Schedule Class Reference}
+\label{classSchedule}\index{Schedule@{Schedule}}
+
+
+{\ttfamily \#include $<$Schedule.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSchedule_a878716f4043a016224a14f78974edf1d}{Schedule}} ()
+\item 
+void \mbox{\hyperlink{classSchedule_af3fb3a366a3b3a4513c624e5657fe135}{set\+\_\+lessons}} (vector$<$ \mbox{\hyperlink{classLesson}{Lesson}} $>$ lessons)
+\item 
+void \mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\+\_\+lesson}} (\mbox{\hyperlink{classLesson}{Lesson}} lesson)
+\item 
+void \mbox{\hyperlink{classSchedule_a541275620a493874533458fc57a4e4c5}{remove\+\_\+lesson}} (\mbox{\hyperlink{classLesson}{Lesson}} lesson)
+\item 
+vector$<$ \mbox{\hyperlink{classLesson}{Lesson}} $>$ \mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\+\_\+lessons}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classLesson}{Lesson}} $>$ \mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file Schedule.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSchedule_a878716f4043a016224a14f78974edf1d}\label{classSchedule_a878716f4043a016224a14f78974edf1d}} 
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\index{Schedule@{Schedule}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{Schedule()}{Schedule()}}
+{\footnotesize\ttfamily Schedule\+::\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Schedule.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 : \mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}}()\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}\label{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}} 
+\index{Schedule@{Schedule}!add\_lesson@{add\_lesson}}
+\index{add\_lesson@{add\_lesson}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{add\_lesson()}{add\_lesson()}}
+{\footnotesize\ttfamily void Schedule\+::add\+\_\+lesson (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLesson}{Lesson}}}]{lesson }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file Schedule.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{\mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}}.push\_back(lesson);\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule_aaff948152fad7ea8ba311fefac1045b0}\label{classSchedule_aaff948152fad7ea8ba311fefac1045b0}} 
+\index{Schedule@{Schedule}!get\_lessons@{get\_lessons}}
+\index{get\_lessons@{get\_lessons}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{get\_lessons()}{get\_lessons()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLesson}{Lesson}} $>$ Schedule\+::get\+\_\+lessons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 8 of file Schedule.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule_a541275620a493874533458fc57a4e4c5}\label{classSchedule_a541275620a493874533458fc57a4e4c5}} 
+\index{Schedule@{Schedule}!remove\_lesson@{remove\_lesson}}
+\index{remove\_lesson@{remove\_lesson}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{remove\_lesson()}{remove\_lesson()}}
+{\footnotesize\ttfamily void Schedule\+::remove\+\_\+lesson (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLesson}{Lesson}}}]{lesson }\end{DoxyParamCaption})}
+
+Tenta remover uma lesson de um vetor de lessons, procura pela lesson e se for encontrada é removida 
+\begin{DoxyParams}{Parameters}
+{\em lesson} & A lesson a ser removida do horário. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Schedule.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{14                                           \{}
+\DoxyCodeLine{15     \textcolor{keyword}{auto} it = find(\mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}}.begin(), \mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}}.end(), lesson);}
+\DoxyCodeLine{16     \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}}.end()) \{}
+\DoxyCodeLine{17         \mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}}.erase(it);}
+\DoxyCodeLine{18     \}}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule_af3fb3a366a3b3a4513c624e5657fe135}\label{classSchedule_af3fb3a366a3b3a4513c624e5657fe135}} 
+\index{Schedule@{Schedule}!set\_lessons@{set\_lessons}}
+\index{set\_lessons@{set\_lessons}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{set\_lessons()}{set\_lessons()}}
+{\footnotesize\ttfamily void Schedule\+::set\+\_\+lessons (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classLesson}{Lesson}} $>$}]{lessons }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Schedule.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20 \{\mbox{\hyperlink{classSchedule_a68bfa075f7affbfb2c038c18584f2367}{lessons\_}} = lessons;\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSchedule_a68bfa075f7affbfb2c038c18584f2367}\label{classSchedule_a68bfa075f7affbfb2c038c18584f2367}} 
+\index{Schedule@{Schedule}!lessons\_@{lessons\_}}
+\index{lessons\_@{lessons\_}!Schedule@{Schedule}}
+\doxysubsubsection{\texorpdfstring{lessons\_}{lessons\_}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classLesson}{Lesson}}$>$ Schedule\+::lessons\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file Schedule.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{Schedule_8h}{Schedule.\+h}}\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{Schedule_8cpp}{Schedule.\+cpp}}\end{DoxyCompactItemize}

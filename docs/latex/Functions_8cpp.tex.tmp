@@ -1,0 +1,219 @@
+\hypertarget{Functions_8cpp}{}\doxysection{/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\+Functions.cpp File Reference}
+\label{Functions_8cpp}\index{/home/joao/Desktop/AED/AED2324\_PRJ1\_G10/schedule/Functions.cpp@{/home/joao/Desktop/AED/AED2324\_PRJ1\_G10/schedule/Functions.cpp}}
+{\ttfamily \#include \char`\"{}Functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lesson.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Schedule.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Student.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+Include dependency graph for Functions.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+set$<$ \mbox{\hyperlink{classUcClass}{Uc\+Class}} $>$ \mbox{\hyperlink{Functions_8cpp_aa4de737580d0a67d6e089d4896e20b49}{parsing\+\_\+classes}} ()
+\item 
+set$<$ \mbox{\hyperlink{classUcClass}{Uc\+Class}} $>$ \mbox{\hyperlink{Functions_8cpp_a9e2a07501aa5bf46b5ed03ee7c0ecd82}{parsing\+\_\+schedules}} (set$<$ \mbox{\hyperlink{classUcClass}{Uc\+Class}} $>$ classes)
+\item 
+set$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ \mbox{\hyperlink{Functions_8cpp_a469bd297dfbee5055c2c409516d3243f}{parsing\+\_\+students}} (set$<$ \mbox{\hyperlink{classUcClass}{Uc\+Class}} $>$ classes)
+\item 
+void \mbox{\hyperlink{Functions_8cpp_aa21b8a91ac91238dc9ac436686172d69}{print\+\_\+schedule}} (\mbox{\hyperlink{classSchedule}{Schedule}} schedule)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Functions_8cpp_aa4de737580d0a67d6e089d4896e20b49}\label{Functions_8cpp_aa4de737580d0a67d6e089d4896e20b49}} 
+\index{Functions.cpp@{Functions.cpp}!parsing\_classes@{parsing\_classes}}
+\index{parsing\_classes@{parsing\_classes}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{parsing\_classes()}{parsing\_classes()}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{classUcClass}{Uc\+Class}}$>$ parsing\+\_\+classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Lê do ficheiro \char`\"{}classes\+\_\+per\+\_\+uc.\+csv\char`\"{} todas as turmas existentes e inicializa um objeto \mbox{\hyperlink{classUcClass}{Uc\+Class}} para cada turma
+
+\begin{DoxyReturn}{Returns}
+Retorna um set com um objeto \mbox{\hyperlink{classUcClass}{Uc\+Class}} para cada turma; Complexidade \+: O(n $\ast$ log(n)), sendo n o número de \char`\"{}classes\char`\"{}. 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file Functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                               \{}
+\DoxyCodeLine{18     ifstream in;}
+\DoxyCodeLine{19     in.open(\textcolor{stringliteral}{"{}../Read\_Info/classes\_per\_uc.csv"{}});}
+\DoxyCodeLine{20     \textcolor{keywordflow}{if} (!in.is\_open())\{}
+\DoxyCodeLine{21         cout << \textcolor{stringliteral}{"{}File not found!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23     set<UcClass> classes;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{string} skip;}
+\DoxyCodeLine{25     getline(in, skip);}
+\DoxyCodeLine{26     \textcolor{keywordflow}{while}(in)\{}
+\DoxyCodeLine{27         \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{28         \textcolor{keywordflow}{while}(getline(in,line))\{}
+\DoxyCodeLine{29             stringstream read(line);}
+\DoxyCodeLine{30             \textcolor{keywordtype}{string} UcCode,ClassCode;}
+\DoxyCodeLine{31             getline(read,UcCode,\textcolor{charliteral}{','});}
+\DoxyCodeLine{32             getline(read,ClassCode,\textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{33             \mbox{\hyperlink{classSchedule}{Schedule}} schedule;}
+\DoxyCodeLine{34             \mbox{\hyperlink{classUcClass}{UcClass}} uclass(ClassCode, schedule);}
+\DoxyCodeLine{35             classes.insert(uclass);}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     in.close();}
+\DoxyCodeLine{39     \textcolor{keywordflow}{return} classes;}
+\DoxyCodeLine{40 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Functions_8cpp_a9e2a07501aa5bf46b5ed03ee7c0ecd82}\label{Functions_8cpp_a9e2a07501aa5bf46b5ed03ee7c0ecd82}} 
+\index{Functions.cpp@{Functions.cpp}!parsing\_schedules@{parsing\_schedules}}
+\index{parsing\_schedules@{parsing\_schedules}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{parsing\_schedules()}{parsing\_schedules()}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{classUcClass}{Uc\+Class}}$>$ parsing\+\_\+schedules (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{classUcClass}{Uc\+Class}} $>$}]{classes }\end{DoxyParamCaption})}
+
+Lê do ficheiro \char`\"{}classes.\+csv\char`\"{} todas as lessons e inicializa o horário de cada turma
+
+\begin{DoxyReturn}{Returns}
+Retorna um set com um objeto \mbox{\hyperlink{classUcClass}{Uc\+Class}} para cada turma com o horário respetivo; Complexidade \+: O(l $\ast$ n $\ast$ log(n)), sendo l o número de \char`\"{}lessons\char`\"{} e n o número de \char`\"{}classes\char`\"{}. 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file Functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{47                                                      \{}
+\DoxyCodeLine{48     ifstream in;}
+\DoxyCodeLine{49     in.open(\textcolor{stringliteral}{"{}../Read\_Info/classes.csv"{}});}
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (!in.is\_open())\{}
+\DoxyCodeLine{51         cout << \textcolor{stringliteral}{"{}File not found!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{string} skip;}
+\DoxyCodeLine{54     getline(in, skip);}
+\DoxyCodeLine{55     \textcolor{keywordflow}{while} (in) \{}
+\DoxyCodeLine{56         \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{57         \textcolor{keywordflow}{while}(getline(in,line)) \{}
+\DoxyCodeLine{58             stringstream read(line);}
+\DoxyCodeLine{59             \textcolor{keywordtype}{string} ClassCode,UcCode,Weekday,Type;}
+\DoxyCodeLine{60             \textcolor{keywordtype}{float} StartHour,Duration;}
+\DoxyCodeLine{61             getline(read,ClassCode,\textcolor{charliteral}{','});}
+\DoxyCodeLine{62             getline(read,UcCode,\textcolor{charliteral}{','});}
+\DoxyCodeLine{63             getline(read,Weekday,\textcolor{charliteral}{','});}
+\DoxyCodeLine{64             read >> StartHour;}
+\DoxyCodeLine{65             read.ignore(1);}
+\DoxyCodeLine{66             read >> Duration;}
+\DoxyCodeLine{67             read.ignore(1);}
+\DoxyCodeLine{68             getline(read,Type,\textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{69             \mbox{\hyperlink{classLesson}{Lesson}} lesson(UcCode,Weekday,StartHour,Duration,Type, ClassCode);}
+\DoxyCodeLine{70             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} turma : classes)\{}
+\DoxyCodeLine{71                 \textcolor{keywordflow}{if} (turma.get\_classCode() == ClassCode)\{}
+\DoxyCodeLine{72                     \mbox{\hyperlink{classSchedule}{Schedule}} schedule;}
+\DoxyCodeLine{73                     schedule = turma.get\_schedule();}
+\DoxyCodeLine{74                     classes.erase(\mbox{\hyperlink{classUcClass}{UcClass}}(ClassCode,schedule));}
+\DoxyCodeLine{75                     schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(lesson);}
+\DoxyCodeLine{76                     classes.insert(\mbox{\hyperlink{classUcClass}{UcClass}}(ClassCode,schedule));}
+\DoxyCodeLine{77                 \}}
+\DoxyCodeLine{78             \}}
+\DoxyCodeLine{79         \}}
+\DoxyCodeLine{80     \}}
+\DoxyCodeLine{81     in.close();}
+\DoxyCodeLine{82     \textcolor{keywordflow}{return} classes;}
+\DoxyCodeLine{83 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Functions_8cpp_a469bd297dfbee5055c2c409516d3243f}\label{Functions_8cpp_a469bd297dfbee5055c2c409516d3243f}} 
+\index{Functions.cpp@{Functions.cpp}!parsing\_students@{parsing\_students}}
+\index{parsing\_students@{parsing\_students}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{parsing\_students()}{parsing\_students()}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{classStudent}{Student}}$>$ parsing\+\_\+students (\begin{DoxyParamCaption}\item[{set$<$ \mbox{\hyperlink{classUcClass}{Uc\+Class}} $>$}]{classes }\end{DoxyParamCaption})}
+
+Lê do ficheiro \char`\"{}students\+\_\+classes.\+csv\char`\"{} todos os students e inicializa um objeto \mbox{\hyperlink{classStudent}{Student}} para cada student com o respetivo horário
+
+\begin{DoxyReturn}{Returns}
+Retorna um set com um objeto \mbox{\hyperlink{classStudent}{Student}} para cada estudante com o horário respetivo; Complexidade \+: O(n$^\wedge$2), sendo n o número de estudantes. 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file Functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{90                                                    \{}
+\DoxyCodeLine{91     ifstream in;}
+\DoxyCodeLine{92     in.open(\textcolor{stringliteral}{"{}../Read\_Info/students\_classes.csv"{}});}
+\DoxyCodeLine{93     \textcolor{keywordflow}{if} (!in.is\_open())\{}
+\DoxyCodeLine{94         cout << \textcolor{stringliteral}{"{}File not found!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     set<Student> students;}
+\DoxyCodeLine{97     list<Student> temp\_students;}
+\DoxyCodeLine{98     \textcolor{keywordtype}{string} skip;}
+\DoxyCodeLine{99     getline(in, skip);}
+\DoxyCodeLine{100     \textcolor{keywordflow}{while} (in) \{}
+\DoxyCodeLine{101         \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{102         \textcolor{keywordflow}{while} (getline(in, line)) \{}
+\DoxyCodeLine{103             stringstream read(line);}
+\DoxyCodeLine{104             \textcolor{keywordtype}{string} StudentCode, StudentName, UcCode, ClassCode;}
+\DoxyCodeLine{105             getline(read,StudentCode,\textcolor{charliteral}{','});}
+\DoxyCodeLine{106             getline(read,StudentName,\textcolor{charliteral}{','});}
+\DoxyCodeLine{107             getline(read,UcCode,\textcolor{charliteral}{','});}
+\DoxyCodeLine{108             getline(read,ClassCode,\textcolor{charliteral}{'\(\backslash\)r'});}
+\DoxyCodeLine{109             \mbox{\hyperlink{classSchedule}{Schedule}} schedule;}
+\DoxyCodeLine{110             \mbox{\hyperlink{classStudent}{Student}} student(StudentName,StudentCode,schedule);}
+\DoxyCodeLine{111             temp\_students.push\_back(student);}
+\DoxyCodeLine{112             \textcolor{keyword}{auto} itr = find(temp\_students.begin(),temp\_students.end(),student);}
+\DoxyCodeLine{113             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} turma: classes) \{}
+\DoxyCodeLine{114                 \textcolor{keywordflow}{if} (turma.get\_classCode() == ClassCode) \{}
+\DoxyCodeLine{115                     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} aula: turma.get\_schedule().get\_lessons())\{}
+\DoxyCodeLine{116                         \textcolor{keywordflow}{if} (UcCode == aula.get\_uc\_code())\{}
+\DoxyCodeLine{117                             \mbox{\hyperlink{classSchedule}{Schedule}} schedule = itr-\/>get\_schedule();}
+\DoxyCodeLine{118                             schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(aula);}
+\DoxyCodeLine{119                             itr-\/>set\_schedule(schedule);}
+\DoxyCodeLine{120                         \}}
+\DoxyCodeLine{121                     \}}
+\DoxyCodeLine{122                 \}}
+\DoxyCodeLine{123             \}}
+\DoxyCodeLine{124         \}}
+\DoxyCodeLine{125     \}}
+\DoxyCodeLine{126     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} i :temp\_students)students.insert(i);}
+\DoxyCodeLine{127     in.close();}
+\DoxyCodeLine{128     \textcolor{keywordflow}{return} students;}
+\DoxyCodeLine{129 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Functions_8cpp_aa21b8a91ac91238dc9ac436686172d69}\label{Functions_8cpp_aa21b8a91ac91238dc9ac436686172d69}} 
+\index{Functions.cpp@{Functions.cpp}!print\_schedule@{print\_schedule}}
+\index{print\_schedule@{print\_schedule}!Functions.cpp@{Functions.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_schedule()}{print\_schedule()}}
+{\footnotesize\ttfamily void print\+\_\+schedule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSchedule}{Schedule}}}]{schedule }\end{DoxyParamCaption})}
+
+Dá print ás lesson pertencentes ao horario e dá sort ás lesson pelo dia de semana e hora a que começam antes de printar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em schedule} & O horário a ser printado. Complexidade \+: O(1). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 136 of file Functions.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136                                        \{}
+\DoxyCodeLine{137     set<Lesson> ordered\_lessons;}
+\DoxyCodeLine{138     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& lesson : schedule.\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{139         ordered\_lessons.insert(lesson);}
+\DoxyCodeLine{140     \}}
+\DoxyCodeLine{141     cout << \textcolor{stringliteral}{"{}Weekday: UcCode/ClassCode start\_time:end\_time, Type"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{142     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& printed : ordered\_lessons)\{}
+\DoxyCodeLine{143         \textcolor{keywordtype}{float} end\_time = printed.get\_start\_time() + printed.get\_duration();}
+\DoxyCodeLine{144         \textcolor{keywordtype}{int} start\_hours = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(printed.get\_start\_time());}
+\DoxyCodeLine{145         \textcolor{keywordtype}{int} start\_minutes = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((printed.get\_start\_time() -\/ start\_hours) * 60);}
+\DoxyCodeLine{146         \textcolor{keywordtype}{int} end\_hours = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(end\_time);}
+\DoxyCodeLine{147         \textcolor{keywordtype}{int} end\_minutes = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}((end\_time -\/ end\_hours) * 60);}
+\DoxyCodeLine{148             cout << printed.get\_weekday() << \textcolor{stringliteral}{"{}: "{}} << printed.get\_uc\_code() << \textcolor{charliteral}{'/'} << printed.get\_class\_code() << \textcolor{charliteral}{' '}<< setfill(\textcolor{charliteral}{'0'}) << setw(2) << start\_hours << \textcolor{stringliteral}{"{}:"{}}<< setfill(\textcolor{charliteral}{'0'}) << setw(2)}
+\DoxyCodeLine{149             << start\_minutes << \textcolor{charliteral}{'-\/'}<< setfill(\textcolor{charliteral}{'0'}) << setw(2) <<end\_hours << \textcolor{stringliteral}{"{}:"{}}<< setfill(\textcolor{charliteral}{'0'}) << setw(2) << end\_minutes << \textcolor{stringliteral}{"{}, ("{}} << printed.get\_type() << \textcolor{stringliteral}{"{})\(\backslash\)n"{}};}
+\DoxyCodeLine{150     \}}
+\DoxyCodeLine{151 \}}
+
+\end{DoxyCode}

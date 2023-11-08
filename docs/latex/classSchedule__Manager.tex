@@ -1,0 +1,1322 @@
+\hypertarget{classSchedule__Manager}{}\doxysection{Schedule\+\_\+\+Manager Class Reference}
+\label{classSchedule__Manager}\index{Schedule\_Manager@{Schedule\_Manager}}
+
+
+{\ttfamily \#include $<$Schedule\+\_\+\+Manager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSchedule__Manager_a63ddba18de97d2b12a2d3fda64a72374}{Schedule\+\_\+\+Manager}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a586be2d883a77d651dcdc08a6e1fbf7e}{print\+\_\+menu}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_afe1a1abfb7a9b9b0fb6d8b6ca9a38f28}{consult}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a3f504cd4f81071565be9df821718ec24}{consult\+\_\+schedule}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_ace26dbd58ab19a5a150de07c58d0d35a}{consult\+\_\+students}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_ae04423b749e6fd9ca40630090411c5af}{number\+\_\+students}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a243038f55d7f6b194f6daaced749858d}{consult\+\_\+occuption}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_ad89cee8f9a459f9851c8ebbc6f520925}{uc\+\_\+most\+\_\+students}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_aa0eaaa787ecb5304d2cf96ad671ec515}{add\+\_\+uc}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a5af5b5c908bc90fb4f00c9fc55a1b3fa}{remove\+\_\+uc}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a43037903b26930210e907d8d5640040c}{switch\+\_\+students}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_ac1cf22ebedcf1e8f7b9bc53cf9964aa7}{request}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a0449de0a9eaffb00f187b890df3665cf}{print\+\_\+history}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a20a6fc61e3dd2e56f288bbc331fc0b8d}{save\+\_\+requests}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a5358d05a9f09b71983af2b23aff2b6bb}{load\+\_\+request}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ pair$<$ string, string $>$, vector$<$ string $>$ $>$ \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\+\_\+uc\+\_\+class}} ()
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}} (string \&word)
+\item 
+int \mbox{\hyperlink{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}{get\+\_\+min\+\_\+attendance}} (string Uc\+Code)
+\item 
+bool \mbox{\hyperlink{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}{check\+\_\+student}} (string Student\+Code)
+\item 
+bool \mbox{\hyperlink{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}{check\+\_\+class}} (string Class\+Code)
+\item 
+bool \mbox{\hyperlink{classSchedule__Manager_a065cab3b61ad1c0093c24a130bfc2679}{check\+\_\+uc}} (string Uc\+Code)
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_a4cbfba0b3cda990777a78635a9b06d5f}{automatic\+\_\+remove}} (string Student\+Code, string Uc\+Code, string Class\+Code)
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_ae58cdffd74c0fa4c18ad7cd1323b77fc}{automatic\+\_\+add}} (string Student\+Code, string Uc\+Code, string Class\+Code)
+\item 
+void \mbox{\hyperlink{classSchedule__Manager_af3790e92d29224dc2f15e1a38ed8e58b}{automatic\+\_\+switch}} (string Student\+Code, string from\+\_\+\+Class\+Code, string from\+\_\+\+Uc\+Code, string to\+\_\+\+Class\+Code, string to\+\_\+\+Uc\+Code)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+set$<$ \mbox{\hyperlink{classUcClass}{Uc\+Class}} $>$ \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}}
+\item 
+set$<$ \mbox{\hyperlink{classStudent}{Student}} $>$ \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}
+\item 
+queue$<$ string $>$ \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 21 of file Schedule\+\_\+\+Manager.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSchedule__Manager_a63ddba18de97d2b12a2d3fda64a72374}\label{classSchedule__Manager_a63ddba18de97d2b12a2d3fda64a72374}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!Schedule\_Manager@{Schedule\_Manager}}
+\index{Schedule\_Manager@{Schedule\_Manager}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{Schedule\_Manager()}{Schedule\_Manager()}}
+{\footnotesize\ttfamily Schedule\+\_\+\+Manager\+::\+Schedule\+\_\+\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+este constructor inicializa o objeto \mbox{\hyperlink{classSchedule__Manager}{Schedule\+\_\+\+Manager}} ao fazer parsing das turmas,horários estudantes. 
+
+Definition at line 11 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11                                   \{}
+\DoxyCodeLine{12     \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}} = \mbox{\hyperlink{Functions_8cpp_aa4de737580d0a67d6e089d4896e20b49}{parsing\_classes}}();}
+\DoxyCodeLine{13     \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}} = \mbox{\hyperlink{Functions_8cpp_a9e2a07501aa5bf46b5ed03ee7c0ecd82}{parsing\_schedules}}(\mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}});}
+\DoxyCodeLine{14     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}} = \mbox{\hyperlink{Functions_8cpp_a469bd297dfbee5055c2c409516d3243f}{parsing\_students}}(\mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}});}
+\DoxyCodeLine{15 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSchedule__Manager_aa0eaaa787ecb5304d2cf96ad671ec515}\label{classSchedule__Manager_aa0eaaa787ecb5304d2cf96ad671ec515}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!add\_uc@{add\_uc}}
+\index{add\_uc@{add\_uc}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{add\_uc()}{add\_uc()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::add\+\_\+uc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador adicionar uma nova unidade curricular ao estudante ,desde que cumpra com as normas. 
+
+Definition at line 447 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{447                               \{}
+\DoxyCodeLine{448     \textcolor{keywordtype}{string} StudentCode;}
+\DoxyCodeLine{449     cout << \textcolor{stringliteral}{"{}Student code? "{}};}
+\DoxyCodeLine{450     cin >> StudentCode;}
+\DoxyCodeLine{451     \mbox{\hyperlink{classStudent}{Student}} user;}
+\DoxyCodeLine{452     \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}{check\_student}}(StudentCode);}
+\DoxyCodeLine{453     \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{454         cout << \textcolor{stringliteral}{"{}Student not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{455         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{456     \}}
+\DoxyCodeLine{457     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& student : \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}) \{}
+\DoxyCodeLine{458         \textcolor{keywordflow}{if} (student.get\_studentCode() == StudentCode) \{}
+\DoxyCodeLine{459             user = student;}
+\DoxyCodeLine{460             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{461         \}}
+\DoxyCodeLine{462     \}}
+\DoxyCodeLine{463     \textcolor{keywordtype}{string} UcCode,ClassCode;}
+\DoxyCodeLine{464     \textcolor{keywordflow}{if}(user.\mbox{\hyperlink{classStudent_a4f0dbe090a0d2a3bcc15bf479a08d6f4}{get\_belong\_ucs}}().size()> 6)\{}
+\DoxyCodeLine{465         cout << \textcolor{stringliteral}{"{}You can't add any more Lessons to your schedule. \(\backslash\)n"{}};}
+\DoxyCodeLine{466         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{467     \}}
+\DoxyCodeLine{468     cout << \textcolor{stringliteral}{"{}UcCode: "{}};}
+\DoxyCodeLine{469     cin >> UcCode;}
+\DoxyCodeLine{470     \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode);}
+\DoxyCodeLine{471     cout << \textcolor{stringliteral}{"{}Class Code: "{}};}
+\DoxyCodeLine{472     cin >> ClassCode;}
+\DoxyCodeLine{473     \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(ClassCode);}
+\DoxyCodeLine{474     \textcolor{keywordtype}{int} min = \mbox{\hyperlink{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}{get\_min\_attendance}}(UcCode);}
+\DoxyCodeLine{475     map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{476     \textcolor{keywordtype}{int} class\_size = uc\_class[\{UcCode,ClassCode\}].size();}
+\DoxyCodeLine{477     \textcolor{keywordflow}{if}(class\_size >= min + 4)\{}
+\DoxyCodeLine{478         cout << \textcolor{stringliteral}{"{}Class full!"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{479         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{480     \}}
+\DoxyCodeLine{481     \mbox{\hyperlink{classLesson}{Lesson}} lesson\_tp;}
+\DoxyCodeLine{482     vector<Lesson> lesson\_t;}
+\DoxyCodeLine{483     \textcolor{keywordtype}{bool} enconter\_lesson = \textcolor{keyword}{false};}
+\DoxyCodeLine{484     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} turma : \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}})\{}
+\DoxyCodeLine{485         \textcolor{keywordflow}{if}(ClassCode == turma.get\_classCode())\{}
+\DoxyCodeLine{486             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} aula: turma.get\_schedule().get\_lessons())}
+\DoxyCodeLine{487                 \textcolor{keywordflow}{if}(UcCode == aula.get\_uc\_code())\{}
+\DoxyCodeLine{488                     \textcolor{keywordflow}{if}(aula.get\_type() == \textcolor{stringliteral}{"{}T"{}})lesson\_t.push\_back(aula);}
+\DoxyCodeLine{489                     \textcolor{keywordflow}{else} lesson\_tp = aula;}
+\DoxyCodeLine{490                     enconter\_lesson = \textcolor{keyword}{true};}
+\DoxyCodeLine{491                 \}}
+\DoxyCodeLine{492         \}}
+\DoxyCodeLine{493     \}}
+\DoxyCodeLine{494     \textcolor{keywordflow}{if} (!enconter\_lesson)\{}
+\DoxyCodeLine{495         cout << \textcolor{stringliteral}{"{}Uc not found!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{496         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{497     \}}
+\DoxyCodeLine{498     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} lesson\_ : user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}().\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{499         \textcolor{keywordflow}{if}(lesson\_.get\_uc\_code() == UcCode)\{}
+\DoxyCodeLine{500             cout << \textcolor{stringliteral}{"{}You're already in a Class in that Uc. \(\backslash\)n"{}};}
+\DoxyCodeLine{501             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{502         \}}
+\DoxyCodeLine{503         \textcolor{keywordflow}{if}(lesson\_.get\_weekday() == lesson\_tp.\mbox{\hyperlink{classLesson_a7e2996ef61ab3373746caa965f1c97c6}{get\_weekday}}())\{}
+\DoxyCodeLine{504             \textcolor{keywordflow}{if}((lesson\_tp.\mbox{\hyperlink{classLesson_ac310f5622ef83f6f61778a7b758ec11d}{get\_start\_time}}() + lesson\_tp.\mbox{\hyperlink{classLesson_a3fddfe03c45042df7f01342222a49680}{get\_duration}}() > lesson\_.get\_start\_time()) \&\& (lesson\_tp.\mbox{\hyperlink{classLesson_ac310f5622ef83f6f61778a7b758ec11d}{get\_start\_time}}() < lesson\_.get\_start\_time() + lesson\_.get\_duration()))\{}
+\DoxyCodeLine{505                 cout << \textcolor{stringliteral}{"{}Lesson Overlap, you can't add this lesson to your schedule. \(\backslash\)n"{}};}
+\DoxyCodeLine{506                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{507             \}}
+\DoxyCodeLine{508         \}}
+\DoxyCodeLine{509     \}}
+\DoxyCodeLine{510     \mbox{\hyperlink{classSchedule}{Schedule}} schedule = user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}();}
+\DoxyCodeLine{511     schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(lesson\_tp);}
+\DoxyCodeLine{512     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} le : lesson\_t)schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(le);}
+\DoxyCodeLine{513     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.erase(user);}
+\DoxyCodeLine{514     user.\mbox{\hyperlink{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}{set\_schedule}}(schedule);}
+\DoxyCodeLine{515     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.insert(user);}
+\DoxyCodeLine{516     \textcolor{keywordtype}{string} change = \textcolor{stringliteral}{"{}Added student "{}} + StudentCode + \textcolor{stringliteral}{"{} to class "{}} + ClassCode + \textcolor{stringliteral}{"{} in Uc "{}} + UcCode + \textcolor{stringliteral}{"{}!                                     "{}};}
+\DoxyCodeLine{517     cout << change << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{518     \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.push(change);}
+\DoxyCodeLine{519 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_ae58cdffd74c0fa4c18ad7cd1323b77fc}\label{classSchedule__Manager_ae58cdffd74c0fa4c18ad7cd1323b77fc}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!automatic\_add@{automatic\_add}}
+\index{automatic\_add@{automatic\_add}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{automatic\_add()}{automatic\_add()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::automatic\+\_\+add (\begin{DoxyParamCaption}\item[{string}]{Student\+Code,  }\item[{string}]{Uc\+Code,  }\item[{string}]{Class\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Adiciona um estudante de uma uc a uma determinada turma,desde que cumpra as normas. 
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & estudante que vai ser adicionado \\
+\hline
+{\em Uc\+Code} & uc a que vai ser adicionado \\
+\hline
+{\em Class\+Code} & class a que vai ser adicionado. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 731 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{731                                                                                        \{}
+\DoxyCodeLine{732     \mbox{\hyperlink{classStudent}{Student}} user;}
+\DoxyCodeLine{733     \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}{check\_student}}(StudentCode);}
+\DoxyCodeLine{734     \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{735         cout << \textcolor{stringliteral}{"{}Student not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{736         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{737     \}}
+\DoxyCodeLine{738     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& student : \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}) \{}
+\DoxyCodeLine{739         \textcolor{keywordflow}{if} (student.get\_studentCode() == StudentCode) \{}
+\DoxyCodeLine{740             user = student;}
+\DoxyCodeLine{741             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{742         \}}
+\DoxyCodeLine{743     \}}
+\DoxyCodeLine{744     \textcolor{keywordflow}{if}(user.\mbox{\hyperlink{classStudent_a4f0dbe090a0d2a3bcc15bf479a08d6f4}{get\_belong\_ucs}}().size() > 6)\{}
+\DoxyCodeLine{745         cout << \textcolor{stringliteral}{"{}You can't add any more Lessons to your schedule. \(\backslash\)n"{}};}
+\DoxyCodeLine{746         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{747     \}}
+\DoxyCodeLine{748     \textcolor{keywordtype}{int} min = \mbox{\hyperlink{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}{get\_min\_attendance}}(UcCode);}
+\DoxyCodeLine{749     map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{750     \textcolor{keywordtype}{int} class\_size = uc\_class[\{UcCode,ClassCode\}].size();}
+\DoxyCodeLine{751     \textcolor{keywordflow}{if}(class\_size >= min + 4)\{}
+\DoxyCodeLine{752         cout << \textcolor{stringliteral}{"{}Class full!"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{753         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{754     \}}
+\DoxyCodeLine{755     \mbox{\hyperlink{classLesson}{Lesson}} lesson\_tp;}
+\DoxyCodeLine{756     vector<Lesson> lesson\_t;}
+\DoxyCodeLine{757     \textcolor{keywordtype}{bool} enconter\_lesson = \textcolor{keyword}{false};}
+\DoxyCodeLine{758     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} turma : \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}})\{}
+\DoxyCodeLine{759         \textcolor{keywordflow}{if}(ClassCode == turma.get\_classCode())\{}
+\DoxyCodeLine{760             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} aula: turma.get\_schedule().get\_lessons())}
+\DoxyCodeLine{761                 \textcolor{keywordflow}{if}(UcCode == aula.get\_uc\_code())\{}
+\DoxyCodeLine{762                     \textcolor{keywordflow}{if}(aula.get\_type() == \textcolor{stringliteral}{"{}T"{}})lesson\_t.push\_back(aula);}
+\DoxyCodeLine{763                     \textcolor{keywordflow}{else} lesson\_tp = aula;}
+\DoxyCodeLine{764                     enconter\_lesson = \textcolor{keyword}{true};}
+\DoxyCodeLine{765                 \}}
+\DoxyCodeLine{766         \}}
+\DoxyCodeLine{767     \}}
+\DoxyCodeLine{768     \textcolor{keywordflow}{if} (!enconter\_lesson)\{}
+\DoxyCodeLine{769         cout << \textcolor{stringliteral}{"{}Uc not found!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{770         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{771     \}}
+\DoxyCodeLine{772     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} lesson\_ : user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}().\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{773         \textcolor{keywordflow}{if}(lesson\_.get\_uc\_code() == UcCode)\{}
+\DoxyCodeLine{774             cout << \textcolor{stringliteral}{"{}You're already in a Class in that Uc. \(\backslash\)n"{}};}
+\DoxyCodeLine{775             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{776         \}}
+\DoxyCodeLine{777         \textcolor{keywordflow}{if}(lesson\_.get\_weekday() == lesson\_tp.\mbox{\hyperlink{classLesson_a7e2996ef61ab3373746caa965f1c97c6}{get\_weekday}}())\{}
+\DoxyCodeLine{778             \textcolor{keywordflow}{if}((lesson\_tp.\mbox{\hyperlink{classLesson_ac310f5622ef83f6f61778a7b758ec11d}{get\_start\_time}}() + lesson\_tp.\mbox{\hyperlink{classLesson_a3fddfe03c45042df7f01342222a49680}{get\_duration}}() > lesson\_.get\_start\_time()) \&\& (lesson\_tp.\mbox{\hyperlink{classLesson_ac310f5622ef83f6f61778a7b758ec11d}{get\_start\_time}}() < lesson\_.get\_start\_time() + lesson\_.get\_duration()))\{}
+\DoxyCodeLine{779                 cout << \textcolor{stringliteral}{"{}Lesson Overlap, you can't add this lesson to your schedule. \(\backslash\)n"{}};}
+\DoxyCodeLine{780                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{781             \}}
+\DoxyCodeLine{782         \}}
+\DoxyCodeLine{783     \}}
+\DoxyCodeLine{784     \mbox{\hyperlink{classSchedule}{Schedule}} schedule = user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}();}
+\DoxyCodeLine{785     schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(lesson\_tp);}
+\DoxyCodeLine{786     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} le : lesson\_t)schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(le);}
+\DoxyCodeLine{787     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.erase(user);}
+\DoxyCodeLine{788     user.\mbox{\hyperlink{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}{set\_schedule}}(schedule);}
+\DoxyCodeLine{789     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.insert(user);}
+\DoxyCodeLine{790 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a4cbfba0b3cda990777a78635a9b06d5f}\label{classSchedule__Manager_a4cbfba0b3cda990777a78635a9b06d5f}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!automatic\_remove@{automatic\_remove}}
+\index{automatic\_remove@{automatic\_remove}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{automatic\_remove()}{automatic\_remove()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::automatic\+\_\+remove (\begin{DoxyParamCaption}\item[{string}]{Student\+Code,  }\item[{string}]{Uc\+Code,  }\item[{string}]{Class\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Remove um estudante de uma uc a uma determinada turma,desde que cumpra as normas. 
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & estudante que vai ser removido \\
+\hline
+{\em Uc\+Code} & uc a que vai ser retirado \\
+\hline
+{\em Class\+Code} & class a que vai ser retirado. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 684 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{684                                                                                            \{}
+\DoxyCodeLine{685     \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}{check\_student}}(StudentCode);}
+\DoxyCodeLine{686     \textcolor{keywordflow}{if}(!exist)\{}
+\DoxyCodeLine{687         cout << \textcolor{stringliteral}{"{}Student not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{688         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{689     \}}
+\DoxyCodeLine{690     \mbox{\hyperlink{classStudent}{Student}} user;}
+\DoxyCodeLine{691     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto}\& student : \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{692         \textcolor{keywordflow}{if}(student.get\_studentCode() == StudentCode)\{}
+\DoxyCodeLine{693             user = student;}
+\DoxyCodeLine{694             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{695         \}}
+\DoxyCodeLine{696     \}}
+\DoxyCodeLine{697     exist = \textcolor{keyword}{false};}
+\DoxyCodeLine{698     \mbox{\hyperlink{classSchedule}{Schedule}} new\_schedule = user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}();}
+\DoxyCodeLine{699     \mbox{\hyperlink{classLesson}{Lesson}} lesson\_remove;}
+\DoxyCodeLine{700     vector<Lesson> lesson\_t;}
+\DoxyCodeLine{701     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& lesson\_ : user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}().\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{702         \textcolor{keywordflow}{if}(lesson\_.get\_uc\_code() == UcCode)\{}
+\DoxyCodeLine{703             \textcolor{keywordflow}{if}(lesson\_.get\_type() == \textcolor{stringliteral}{"{}T"{}})lesson\_t.push\_back(lesson\_);}
+\DoxyCodeLine{704             \textcolor{keywordflow}{else} lesson\_remove = lesson\_;}
+\DoxyCodeLine{705             exist = \textcolor{keyword}{true};}
+\DoxyCodeLine{706         \}}
+\DoxyCodeLine{707     \}}
+\DoxyCodeLine{708     \textcolor{keywordflow}{if}(!exist)\{}
+\DoxyCodeLine{709         cout << \textcolor{stringliteral}{"{}Could not find Uc! \(\backslash\)n"{}};}
+\DoxyCodeLine{710         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{711     \}}
+\DoxyCodeLine{712     \textcolor{keywordtype}{int} min = \mbox{\hyperlink{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}{get\_min\_attendance}}(UcCode);}
+\DoxyCodeLine{713     map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{714     \textcolor{keywordtype}{int} class\_size = uc\_class[\{UcCode,ClassCode\}].size();}
+\DoxyCodeLine{715     \textcolor{keywordflow}{if}(class\_size <= min)\{}
+\DoxyCodeLine{716         cout << \textcolor{stringliteral}{"{}Can´t remove from class!"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{717         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{718     \}}
+\DoxyCodeLine{719     new\_schedule.\mbox{\hyperlink{classSchedule_a541275620a493874533458fc57a4e4c5}{remove\_lesson}}(lesson\_remove);}
+\DoxyCodeLine{720     \textcolor{keywordflow}{for} ( \textcolor{keyword}{auto} le:lesson\_t)new\_schedule.\mbox{\hyperlink{classSchedule_a541275620a493874533458fc57a4e4c5}{remove\_lesson}}(le);}
+\DoxyCodeLine{721     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.erase(user);}
+\DoxyCodeLine{722     user.\mbox{\hyperlink{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}{set\_schedule}}(new\_schedule);}
+\DoxyCodeLine{723     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.insert(user);}
+\DoxyCodeLine{724 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_af3790e92d29224dc2f15e1a38ed8e58b}\label{classSchedule__Manager_af3790e92d29224dc2f15e1a38ed8e58b}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!automatic\_switch@{automatic\_switch}}
+\index{automatic\_switch@{automatic\_switch}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{automatic\_switch()}{automatic\_switch()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::automatic\+\_\+switch (\begin{DoxyParamCaption}\item[{string}]{Student\+Code,  }\item[{string}]{from\+\_\+\+Class\+Code,  }\item[{string}]{from\+\_\+\+Uc\+Code,  }\item[{string}]{to\+\_\+\+Class\+Code,  }\item[{string}]{to\+\_\+\+Uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Altera um estudante de uc ou de turma,desde que cumpra as normas. 
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & estudante que vai ser alterado \\
+\hline
+{\em to\+\_\+\+Uc\+Code} & uc a que vai ser retirado \\
+\hline
+{\em to\+\_\+\+Class\+Code} & class a que vai ser retirado \\
+\hline
+{\em from\+\_\+\+Uc\+Code} & uc a que vai ser adicionado \\
+\hline
+{\em from\+\_\+\+Class\+Code} & class a que vai ser adicionado. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 799 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{799                                                                                                                                         \{}
+\DoxyCodeLine{800     \mbox{\hyperlink{classSchedule__Manager_a4cbfba0b3cda990777a78635a9b06d5f}{automatic\_remove}}(StudentCode,to\_UcCode,to\_ClassCode);}
+\DoxyCodeLine{801     \mbox{\hyperlink{classSchedule__Manager_ae58cdffd74c0fa4c18ad7cd1323b77fc}{automatic\_add}}(StudentCode,from\_UcCode,from\_ClassCode);}
+\DoxyCodeLine{802 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}\label{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!check\_class@{check\_class}}
+\index{check\_class@{check\_class}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{check\_class()}{check\_class()}}
+{\footnotesize\ttfamily bool Schedule\+\_\+\+Manager\+::check\+\_\+class (\begin{DoxyParamCaption}\item[{string}]{Class\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Percorre o set que contem todas as turmas e verifica se há alguma turma com código igual ao fornecido 
+\begin{DoxyParams}{Parameters}
+{\em Class\+Code} & o Class\+Code para comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna verdeiro se existir uma turma com este Class\+Code, falso caso contrário. Complexidade \+: O(n), sendo n o número de turmas. 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36                                                    \{}
+\DoxyCodeLine{37     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& turma: \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}})\{}
+\DoxyCodeLine{38         \textcolor{keywordflow}{if}(turma.get\_classCode() == ClassCode)\{}
+\DoxyCodeLine{39             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{40         \}}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{43 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}\label{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!check\_student@{check\_student}}
+\index{check\_student@{check\_student}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{check\_student()}{check\_student()}}
+{\footnotesize\ttfamily bool Schedule\+\_\+\+Manager\+::check\+\_\+student (\begin{DoxyParamCaption}\item[{string}]{Student\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Percorre o set que contem todos os estudantes e verifica se há algum estudante com código de estudante igual ao fornecido 
+\begin{DoxyParams}{Parameters}
+{\em Student\+Code} & o Student\+Code para comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna verdeiro se existir um estudante com este Student\+Code, falso caso contrário. Complexidade \+: O(n), sendo n o número de estudantes. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{22                                                         \{}
+\DoxyCodeLine{23     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& student : \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}) \{}
+\DoxyCodeLine{24         \textcolor{keywordflow}{if} (student.get\_studentCode() == StudentCode) \{}
+\DoxyCodeLine{25             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{26         \}}
+\DoxyCodeLine{27     \}}
+\DoxyCodeLine{28     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{29 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a065cab3b61ad1c0093c24a130bfc2679}\label{classSchedule__Manager_a065cab3b61ad1c0093c24a130bfc2679}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!check\_uc@{check\_uc}}
+\index{check\_uc@{check\_uc}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{check\_uc()}{check\_uc()}}
+{\footnotesize\ttfamily bool Schedule\+\_\+\+Manager\+::check\+\_\+uc (\begin{DoxyParamCaption}\item[{string}]{Uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Percorre o set que contem todas as turmas,percorre o horário de cada turma e verifica se há alguma uc com código igual ao fornecido 
+\begin{DoxyParams}{Parameters}
+{\em Uc\+Code} & o Uc\+Code para comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna verdeiro se existir uma turma com uma uc com este Uc\+Code, falso caso contrário. Complexidade \+: O(n $\ast$ m), sendo n o número de Ucs e m o número de \char`\"{}lessons\char`\"{}. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                              \{}
+\DoxyCodeLine{51     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& turma: \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}} )\{}
+\DoxyCodeLine{52         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& aula: turma.get\_schedule().get\_lessons())\{}
+\DoxyCodeLine{53             \textcolor{keywordflow}{if} (aula.get\_uc\_code() == UcCode)\textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55     \}}
+\DoxyCodeLine{56     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{57 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_afe1a1abfb7a9b9b0fb6d8b6ca9a38f28}\label{classSchedule__Manager_afe1a1abfb7a9b9b0fb6d8b6ca9a38f28}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!consult@{consult}}
+\index{consult@{consult}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{consult()}{consult()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::consult (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{113                                \{}
+\DoxyCodeLine{114     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Consult Menu-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{115     cout << \textcolor{stringliteral}{"{}| 1-\/Consult the schedule of a given student or class               |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{116     cout << \textcolor{stringliteral}{"{}| 2-\/Consult the students within a given class, course or year      |"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{117     cout << \textcolor{stringliteral}{"{}| 3-\/Consult the number of students registered in at least n UCs    |"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{118     cout << \textcolor{stringliteral}{"{}| 4-\/Consult the class/year/UC occupation                           |"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{119     cout << \textcolor{stringliteral}{"{}| 5-\/Consult the UCs with the greatest number of students           |"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{120     cout << \textcolor{stringliteral}{"{}| 6-\/Menu                                                           |"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{121     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{122     cout << \textcolor{stringliteral}{"{}Choose the option you want to do: "{}};}
+\DoxyCodeLine{123 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a243038f55d7f6b194f6daaced749858d}\label{classSchedule__Manager_a243038f55d7f6b194f6daaced749858d}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!consult\_occuption@{consult\_occuption}}
+\index{consult\_occuption@{consult\_occuption}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{consult\_occuption()}{consult\_occuption()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::consult\+\_\+occuption (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador consultar o número de estudantes e a ocupação a uma determinada/o turma,uc,ano ou numa uc a uma determinada turma. 
+
+Definition at line 307 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{307                                          \{}
+\DoxyCodeLine{308     \textcolor{keywordflow}{while} (\textcolor{keyword}{true})\{}
+\DoxyCodeLine{309         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Choose one-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{310         cout << \textcolor{stringliteral}{"{}|              1-\/Class                   |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{311         cout << \textcolor{stringliteral}{"{}|              2-\/UC                      |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{312         cout << \textcolor{stringliteral}{"{}|              3-\/Year                    |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{313         cout << \textcolor{stringliteral}{"{}|              4-\/Uc/Class                |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{314         cout << \textcolor{stringliteral}{"{}|              5-\/Back                    |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{315         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{316         cout << \textcolor{stringliteral}{"{}Choose the option you want to do: "{}};}
+\DoxyCodeLine{317         \textcolor{keywordtype}{char} i;}
+\DoxyCodeLine{318         cin >> i;}
+\DoxyCodeLine{319         \textcolor{keywordtype}{bool} cloose = \textcolor{keyword}{false};}
+\DoxyCodeLine{320         \textcolor{keywordflow}{if}(i== \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{321             cout << \textcolor{stringliteral}{"{}Code of the class: "{}};}
+\DoxyCodeLine{322             \textcolor{keywordtype}{string} ClassCode;}
+\DoxyCodeLine{323             cin >> ClassCode;}
+\DoxyCodeLine{324             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(ClassCode);}
+\DoxyCodeLine{325             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}{check\_class}}(ClassCode);}
+\DoxyCodeLine{326             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{327                 cout << \textcolor{stringliteral}{"{}Class not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{328                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{329             \}}
+\DoxyCodeLine{330             unordered\_map<string,vector<string>> student\_class;}
+\DoxyCodeLine{331             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{332                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& turma: student.get\_belong\_class())student\_class[turma].push\_back(student.get\_name());}
+\DoxyCodeLine{333             \}}
+\DoxyCodeLine{334             \textcolor{keywordtype}{double} occupation = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(student\_class[ClassCode].size())/\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.size())*100;}
+\DoxyCodeLine{335             cout << \textcolor{stringliteral}{"{}The class "{}}<< ClassCode <<\textcolor{stringliteral}{"{} with "{}} << student\_class[ClassCode].size() << \textcolor{stringliteral}{"{} students has an occuption of "{}}<< fixed << setprecision(2)<< occupation<< \textcolor{stringliteral}{"{}\% !"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{336         \}}
+\DoxyCodeLine{337         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i == \textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{338             cout << \textcolor{stringliteral}{"{}Code of the Uc: "{}};}
+\DoxyCodeLine{339             \textcolor{keywordtype}{string} UcCode;}
+\DoxyCodeLine{340             cin >> UcCode;}
+\DoxyCodeLine{341             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode);}
+\DoxyCodeLine{342             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a065cab3b61ad1c0093c24a130bfc2679}{check\_uc}}(UcCode);}
+\DoxyCodeLine{343             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{344                 cout << \textcolor{stringliteral}{"{}Uc not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{345                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{346             \}}
+\DoxyCodeLine{347             unordered\_map<string,vector<string>> student\_ucs;}
+\DoxyCodeLine{348             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} student: \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{349                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} course:student.get\_belong\_ucs())student\_ucs[course].push\_back(student.get\_name());}
+\DoxyCodeLine{350             \}}
+\DoxyCodeLine{351             \textcolor{keywordtype}{double} occupation = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(student\_ucs[UcCode].size())/\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.size())*100;}
+\DoxyCodeLine{352             cout << \textcolor{stringliteral}{"{}The UC "{}}<< UcCode<< \textcolor{stringliteral}{"{} with "{}} << student\_ucs[UcCode].size() << \textcolor{stringliteral}{"{} students has an occuption of "{}}<< fixed << setprecision(2)<< occupation<< \textcolor{stringliteral}{"{}\% !"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{353         \}}
+\DoxyCodeLine{354         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i==\textcolor{charliteral}{'3'})\{}
+\DoxyCodeLine{355             cout << \textcolor{stringliteral}{"{}Year: "{}};}
+\DoxyCodeLine{356             \textcolor{keywordtype}{string} year;}
+\DoxyCodeLine{357             cin >> year;}
+\DoxyCodeLine{358             unordered\_map<string,vector<string>> student\_year;}
+\DoxyCodeLine{359             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{360                 set<string> turmas = student.get\_belong\_class();}
+\DoxyCodeLine{361                 \textcolor{keyword}{auto} maxElement = max\_element(turmas.begin(),turmas.end());}
+\DoxyCodeLine{362                 \textcolor{keywordflow}{if}((*maxElement)[0] == \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{363                     student\_year[\textcolor{stringliteral}{"{}1"{}}].push\_back(student.get\_name());}
+\DoxyCodeLine{364                 \}}
+\DoxyCodeLine{365                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((*maxElement)[0] == \textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{366                     student\_year[\textcolor{stringliteral}{"{}2"{}}].push\_back(student.get\_name());}
+\DoxyCodeLine{367                 \}}
+\DoxyCodeLine{368                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((*maxElement)[0] == \textcolor{charliteral}{'3'})\{}
+\DoxyCodeLine{369                     student\_year[\textcolor{stringliteral}{"{}3"{}}].push\_back(student.get\_name());}
+\DoxyCodeLine{370                 \}}
+\DoxyCodeLine{371             \}}
+\DoxyCodeLine{372             \textcolor{keywordtype}{double} occupation = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(student\_year[year].size()) / \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.size()) * 100.0;}
+\DoxyCodeLine{373             cout << \textcolor{stringliteral}{"{}The year "{}}<< year << \textcolor{stringliteral}{"{} with "{}}<<  student\_year[year].size() <<\textcolor{stringliteral}{"{} students has an occuption of "{}}<< fixed << setprecision(2)<<occupation<< \textcolor{stringliteral}{"{}\% !"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{374         \}}
+\DoxyCodeLine{375         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i == \textcolor{charliteral}{'4'})\{}
+\DoxyCodeLine{376             cout << \textcolor{stringliteral}{"{}Code of the Uc: "{}};}
+\DoxyCodeLine{377             \textcolor{keywordtype}{string} UcCode;}
+\DoxyCodeLine{378             cin >> UcCode;}
+\DoxyCodeLine{379             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode);}
+\DoxyCodeLine{380             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a065cab3b61ad1c0093c24a130bfc2679}{check\_uc}}(UcCode);}
+\DoxyCodeLine{381             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{382                 cout << \textcolor{stringliteral}{"{}Uc not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{383                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{384             \}}
+\DoxyCodeLine{385             cout << \textcolor{stringliteral}{"{}Code of the class: "{}};}
+\DoxyCodeLine{386             \textcolor{keywordtype}{string} ClassCode;}
+\DoxyCodeLine{387             cin >> ClassCode;}
+\DoxyCodeLine{388             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(ClassCode);}
+\DoxyCodeLine{389             exist = \mbox{\hyperlink{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}{check\_class}}(ClassCode);}
+\DoxyCodeLine{390             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{391                 cout << \textcolor{stringliteral}{"{}Class not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{392                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{393             \}}
+\DoxyCodeLine{394             map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{395             \textcolor{keywordtype}{double} occupation = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{double}\textcolor{keyword}{>}(uc\_class[\{UcCode,ClassCode\}].size())/\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.size())*100;}
+\DoxyCodeLine{396             cout << \textcolor{stringliteral}{"{}The uc "{}} << UcCode << \textcolor{stringliteral}{"{} in class "{}}<< ClassCode<< \textcolor{stringliteral}{"{} with "{}} <<uc\_class[\{UcCode,ClassCode\}].size()<<}
+\DoxyCodeLine{397                  \textcolor{stringliteral}{"{} students has an occuption of "{}}<< fixed<<setprecision(2)<<occupation<< \textcolor{stringliteral}{"{}\% !"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{398         \}}
+\DoxyCodeLine{399         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i==\textcolor{charliteral}{'5'})cloose = \textcolor{keyword}{true};}
+\DoxyCodeLine{400         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{401             cout <<\textcolor{stringliteral}{"{}Invalid input!"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{402         \textcolor{keywordflow}{if}(cloose)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{403     \}}
+\DoxyCodeLine{404 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a3f504cd4f81071565be9df821718ec24}\label{classSchedule__Manager_a3f504cd4f81071565be9df821718ec24}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!consult\_schedule@{consult\_schedule}}
+\index{consult\_schedule@{consult\_schedule}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{consult\_schedule()}{consult\_schedule()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::consult\+\_\+schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador escolher se quer visualizar um hoŕario de um estudante ou de uma turma podendo escolher o respetivo estudante e a respetiva turma. 
+
+Definition at line 128 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{128                                         \{}
+\DoxyCodeLine{129     \textcolor{keywordflow}{while} (\textcolor{keyword}{true})\{}
+\DoxyCodeLine{130         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Choose one-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{131         cout << \textcolor{stringliteral}{"{}|              1-\/Student                 |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{132         cout << \textcolor{stringliteral}{"{}|              2-\/Class                   |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{133         cout << \textcolor{stringliteral}{"{}|              3-\/Back                    |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{134         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{135         cout << \textcolor{stringliteral}{"{}Choose the option you want to do: "{}};}
+\DoxyCodeLine{136         \textcolor{keywordtype}{char} i;}
+\DoxyCodeLine{137         cin >> i;}
+\DoxyCodeLine{138         \textcolor{keywordtype}{bool} cloose = \textcolor{keyword}{false};}
+\DoxyCodeLine{139         \textcolor{keywordflow}{if}(i== \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{140             cout << \textcolor{stringliteral}{"{}Code of the student: "{}};}
+\DoxyCodeLine{141             \textcolor{keywordtype}{string} StudentCode;}
+\DoxyCodeLine{142             cin >> StudentCode;}
+\DoxyCodeLine{143             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}{check\_student}}(StudentCode);}
+\DoxyCodeLine{144             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{145                 cout << \textcolor{stringliteral}{"{}Student not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{146                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{147             \}}
+\DoxyCodeLine{148             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{149                 \textcolor{keywordflow}{if} (student.get\_studentCode() == StudentCode)\{}
+\DoxyCodeLine{150                     \mbox{\hyperlink{Functions_8cpp_aa21b8a91ac91238dc9ac436686172d69}{print\_schedule}}(student.get\_schedule());}
+\DoxyCodeLine{151                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{152                 \}}
+\DoxyCodeLine{153                 \}}
+\DoxyCodeLine{154         \}}
+\DoxyCodeLine{155         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i==\textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{156             cout << \textcolor{stringliteral}{"{}Code of the class: "{}};}
+\DoxyCodeLine{157             \textcolor{keywordtype}{string} ClassCode;}
+\DoxyCodeLine{158             cin >> ClassCode;}
+\DoxyCodeLine{159             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(ClassCode);}
+\DoxyCodeLine{160             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}{check\_class}}(ClassCode);}
+\DoxyCodeLine{161             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{162                 cout << \textcolor{stringliteral}{"{}Class not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{163                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{164             \}}
+\DoxyCodeLine{165             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& turma : \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}})\{}
+\DoxyCodeLine{166                 \textcolor{keywordflow}{if}(turma.get\_classCode() == ClassCode) \{}
+\DoxyCodeLine{167                     \mbox{\hyperlink{Functions_8cpp_aa21b8a91ac91238dc9ac436686172d69}{print\_schedule}}(turma.get\_schedule());}
+\DoxyCodeLine{168                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{169                 \}}
+\DoxyCodeLine{170             \}}
+\DoxyCodeLine{171         \}}
+\DoxyCodeLine{172         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i == \textcolor{charliteral}{'3'})cloose = \textcolor{keyword}{true};}
+\DoxyCodeLine{173         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{174             cout <<\textcolor{stringliteral}{"{}Invalid input!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{175         \textcolor{keywordflow}{if}(cloose)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{176     \}}
+\DoxyCodeLine{177 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_ace26dbd58ab19a5a150de07c58d0d35a}\label{classSchedule__Manager_ace26dbd58ab19a5a150de07c58d0d35a}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!consult\_students@{consult\_students}}
+\index{consult\_students@{consult\_students}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{consult\_students()}{consult\_students()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::consult\+\_\+students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador consultar todos os estudantes a uma determinada/o turma,uc,ano ou numa uc a uma determinada turma. 
+
+Definition at line 181 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{181                                         \{}
+\DoxyCodeLine{182     \textcolor{keywordflow}{while} (\textcolor{keyword}{true})\{}
+\DoxyCodeLine{183         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Choose one-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{184         cout << \textcolor{stringliteral}{"{}|              1-\/Class                   |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{185         cout << \textcolor{stringliteral}{"{}|              2-\/Course                  |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{186         cout << \textcolor{stringliteral}{"{}|              3-\/Year                    |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{187         cout << \textcolor{stringliteral}{"{}|              4-\/Uc/Class                |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{188         cout << \textcolor{stringliteral}{"{}|              5-\/Back                    |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{189         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{190         cout << \textcolor{stringliteral}{"{}Choose the option you want to do: "{}};}
+\DoxyCodeLine{191         \textcolor{keywordtype}{char} i;}
+\DoxyCodeLine{192         cin >> i;}
+\DoxyCodeLine{193         \textcolor{keywordtype}{bool} cloose = \textcolor{keyword}{false};}
+\DoxyCodeLine{194         \textcolor{keywordflow}{if}(i== \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{195             cout << \textcolor{stringliteral}{"{}Code of the class: "{}};}
+\DoxyCodeLine{196             \textcolor{keywordtype}{string} ClassCode;}
+\DoxyCodeLine{197             cin >> ClassCode;}
+\DoxyCodeLine{198             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(ClassCode);}
+\DoxyCodeLine{199             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}{check\_class}}(ClassCode);}
+\DoxyCodeLine{200             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{201                 cout << \textcolor{stringliteral}{"{}Class not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{202                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{203             \}}
+\DoxyCodeLine{204             unordered\_map<string,vector<string>> student\_class;}
+\DoxyCodeLine{205             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{206                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& turma: student.get\_belong\_class())student\_class[turma].push\_back(student.get\_name());}
+\DoxyCodeLine{207             \}}
+\DoxyCodeLine{208             sort(student\_class[ClassCode].begin(), student\_class[ClassCode].end());}
+\DoxyCodeLine{209             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:student\_class[ClassCode])\{}
+\DoxyCodeLine{210                 cout << student << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{211             \}}
+\DoxyCodeLine{212         \}}
+\DoxyCodeLine{213         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i == \textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{214             cout << \textcolor{stringliteral}{"{}Code of the Uc: "{}};}
+\DoxyCodeLine{215             \textcolor{keywordtype}{string} UcCode;}
+\DoxyCodeLine{216             cin >> UcCode;}
+\DoxyCodeLine{217             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode);}
+\DoxyCodeLine{218             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a065cab3b61ad1c0093c24a130bfc2679}{check\_uc}}(UcCode);}
+\DoxyCodeLine{219             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{220                 cout << \textcolor{stringliteral}{"{}Uc not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{221                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{222             \}}
+\DoxyCodeLine{223             unordered\_map<string,vector<string>> student\_ucs;}
+\DoxyCodeLine{224             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} student: \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{225                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} course:student.get\_belong\_ucs())student\_ucs[course].push\_back(student.get\_name());}
+\DoxyCodeLine{226             \}}
+\DoxyCodeLine{227             sort(student\_ucs[UcCode].begin(), student\_ucs[UcCode].end());}
+\DoxyCodeLine{228             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& student :student\_ucs[UcCode])\{}
+\DoxyCodeLine{229                 cout << student << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{230             \}}
+\DoxyCodeLine{231         \}}
+\DoxyCodeLine{232         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i==\textcolor{charliteral}{'3'})\{}
+\DoxyCodeLine{233             cout << \textcolor{stringliteral}{"{}Year: "{}};}
+\DoxyCodeLine{234             \textcolor{keywordtype}{string} year;}
+\DoxyCodeLine{235             cin >> year;}
+\DoxyCodeLine{236             unordered\_map<string,vector<string>> student\_year;}
+\DoxyCodeLine{237             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{238                 set<string> turmas = student.get\_belong\_class();}
+\DoxyCodeLine{239                 \textcolor{keyword}{auto} maxElement = max\_element(turmas.begin(),turmas.end());}
+\DoxyCodeLine{240                 \textcolor{keywordflow}{if}((*maxElement)[0] == \textcolor{charliteral}{'1'})\{}
+\DoxyCodeLine{241                     student\_year[\textcolor{stringliteral}{"{}1"{}}].push\_back(student.get\_name());}
+\DoxyCodeLine{242                 \}}
+\DoxyCodeLine{243                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((*maxElement)[0] == \textcolor{charliteral}{'2'})\{}
+\DoxyCodeLine{244                     student\_year[\textcolor{stringliteral}{"{}2"{}}].push\_back(student.get\_name());}
+\DoxyCodeLine{245                 \}}
+\DoxyCodeLine{246                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}((*maxElement)[0] == \textcolor{charliteral}{'3'})\{}
+\DoxyCodeLine{247                     student\_year[\textcolor{stringliteral}{"{}3"{}}].push\_back(student.get\_name());}
+\DoxyCodeLine{248                 \}}
+\DoxyCodeLine{249             \}}
+\DoxyCodeLine{250             sort(student\_year[year].begin(), student\_year[year].end());}
+\DoxyCodeLine{251             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:student\_year[year])\{}
+\DoxyCodeLine{252                 cout << student << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{253             \}}
+\DoxyCodeLine{254         \}}
+\DoxyCodeLine{255         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i == \textcolor{charliteral}{'4'})\{}
+\DoxyCodeLine{256             cout << \textcolor{stringliteral}{"{}Code of the Uc: "{}};}
+\DoxyCodeLine{257             \textcolor{keywordtype}{string} UcCode;}
+\DoxyCodeLine{258             cin >> UcCode;}
+\DoxyCodeLine{259             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode);}
+\DoxyCodeLine{260             \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a065cab3b61ad1c0093c24a130bfc2679}{check\_uc}}(UcCode);}
+\DoxyCodeLine{261             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{262                 cout << \textcolor{stringliteral}{"{}Uc not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{263                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{264             \}}
+\DoxyCodeLine{265             cout << \textcolor{stringliteral}{"{}Code of the class: "{}};}
+\DoxyCodeLine{266             \textcolor{keywordtype}{string} ClassCode;}
+\DoxyCodeLine{267             cin >> ClassCode;}
+\DoxyCodeLine{268             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(ClassCode);}
+\DoxyCodeLine{269             exist = \mbox{\hyperlink{classSchedule__Manager_afca023f8bb4cabcc737cce7ee30151ed}{check\_class}}(ClassCode);}
+\DoxyCodeLine{270             \textcolor{keywordflow}{if} (!exist) \{}
+\DoxyCodeLine{271                 cout << \textcolor{stringliteral}{"{}Class not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{272                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{273             \}}
+\DoxyCodeLine{274             map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{275             sort(uc\_class[\{UcCode, ClassCode\}].begin(), uc\_class[\{UcCode, ClassCode\}].end());}
+\DoxyCodeLine{276             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& student: uc\_class[\{UcCode,ClassCode\}])\{}
+\DoxyCodeLine{277                 cout << student << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{278             \}}
+\DoxyCodeLine{279         \}}
+\DoxyCodeLine{280         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(i==\textcolor{charliteral}{'5'})cloose = \textcolor{keyword}{true};}
+\DoxyCodeLine{281         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{282             cout <<\textcolor{stringliteral}{"{}Invalid input!"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{283         \textcolor{keywordflow}{if}(cloose)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{284     \}}
+\DoxyCodeLine{285 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}\label{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!get\_min\_attendance@{get\_min\_attendance}}
+\index{get\_min\_attendance@{get\_min\_attendance}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{get\_min\_attendance()}{get\_min\_attendance()}}
+{\footnotesize\ttfamily int Schedule\+\_\+\+Manager\+::get\+\_\+min\+\_\+attendance (\begin{DoxyParamCaption}\item[{string}]{Uc\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Percorre o map que contem os alunos a cada uc/turma e vê se o tamanho dessa turma é o minimo 
+\begin{DoxyParams}{Parameters}
+{\em Uc\+Code} & uc á qual se quer ver o tamanho das turmas \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna um inteiro que representa o minimo de alunos numa turma a determinada uc. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                                                      \{}
+\DoxyCodeLine{82     \textcolor{keywordtype}{int} min ;}
+\DoxyCodeLine{83     \textcolor{keywordtype}{bool} first\_try = \textcolor{keyword}{true};}
+\DoxyCodeLine{84     map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{85     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} pair : uc\_class)\{}
+\DoxyCodeLine{86         \textcolor{keywordflow}{if}(pair.first.first == UcCode)\{}
+\DoxyCodeLine{87             \textcolor{keywordflow}{if} (first\_try)\{}
+\DoxyCodeLine{88                 first\_try = \textcolor{keyword}{false};}
+\DoxyCodeLine{89                 min = pair.second.size();}
+\DoxyCodeLine{90             \}}
+\DoxyCodeLine{91             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(min > pair.second.size())min = pair.second.size();}
+\DoxyCodeLine{92         \}}
+\DoxyCodeLine{93     \}}
+\DoxyCodeLine{94     \textcolor{keywordflow}{return} min;}
+\DoxyCodeLine{95 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}\label{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!get\_uc\_class@{get\_uc\_class}}
+\index{get\_uc\_class@{get\_uc\_class}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{get\_uc\_class()}{get\_uc\_class()}}
+{\footnotesize\ttfamily map$<$ pair$<$ string, string $>$, vector$<$ string $>$ $>$ Schedule\+\_\+\+Manager\+::get\+\_\+uc\+\_\+class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Percorre o set que contem todas os estudantes , percorre o horário do estudante e cria um par com o Uc\+Code e o Class\+Code de cada aula e usando o valor do par como chave adiciona o nome do aluno a um vetor que corresponde ao valor da chave \begin{DoxyReturn}{Returns}
+retorna um map cuja chaves são pares de strings sendo uma delas a uc e outra a turma e os valores um vetor com os nomes dos os estudantes que pertencem aquela turma naquela uc. Complexidade \+: O(s $\ast$ n), sendo s o número de estudantes e n o tamanho médio do vetor no mapa. 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                                                        \{}
+\DoxyCodeLine{66     map <pair<string,string >,vector<string>> uc\_class;}
+\DoxyCodeLine{67     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& student:\mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{68         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& uc : student.get\_schedule().get\_lessons())\{}
+\DoxyCodeLine{69             pair <string,string> p = \{uc.get\_uc\_code(),uc.get\_class\_code()\};}
+\DoxyCodeLine{70             \textcolor{keyword}{auto} found = find(uc\_class[p].begin(),uc\_class[p].end(),student.get\_name());}
+\DoxyCodeLine{71             \textcolor{keywordflow}{if}(found == uc\_class[p].end())uc\_class[p].push\_back(student.get\_name());}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73     \}}
+\DoxyCodeLine{74     \textcolor{keywordflow}{return} uc\_class;}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a5358d05a9f09b71983af2b23aff2b6bb}\label{classSchedule__Manager_a5358d05a9f09b71983af2b23aff2b6bb}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!load\_request@{load\_request}}
+\index{load\_request@{load\_request}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{load\_request()}{load\_request()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::load\+\_\+request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Carrega todos os pedidos feitos anteriormente pelo utilizador quando liga o programa. 
+
+Definition at line 874 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{874                                     \{}
+\DoxyCodeLine{875     ifstream in;}
+\DoxyCodeLine{876     in.open(\textcolor{stringliteral}{"{}../Read\_Info/requests.csv"{}});}
+\DoxyCodeLine{877     \textcolor{keywordflow}{if} (!in.is\_open())\{}
+\DoxyCodeLine{878         cout << \textcolor{stringliteral}{"{}File not found!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{879     \}}
+\DoxyCodeLine{880     \textcolor{keywordflow}{while}(in)\{}
+\DoxyCodeLine{881         \textcolor{keywordtype}{string} line;}
+\DoxyCodeLine{882         \textcolor{keywordflow}{while}(getline(in,line))\{}
+\DoxyCodeLine{883             \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.push(line);}
+\DoxyCodeLine{884             stringstream in(line);}
+\DoxyCodeLine{885             vector <string> Code;}
+\DoxyCodeLine{886             \textcolor{keywordtype}{string} word;}
+\DoxyCodeLine{887             \textcolor{keywordflow}{while}(in >> word)\{}
+\DoxyCodeLine{888                 Code.push\_back(word);}
+\DoxyCodeLine{889             \}}
+\DoxyCodeLine{890             \textcolor{keywordflow}{if}(Code[0]==\textcolor{stringliteral}{"{}Added"{}})\mbox{\hyperlink{classSchedule__Manager_ae58cdffd74c0fa4c18ad7cd1323b77fc}{automatic\_add}}(Code[2],Code[8].substr(0,Code[8].size()-\/1),Code[5]);}
+\DoxyCodeLine{891             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Code[0]==\textcolor{stringliteral}{"{}Removed"{}})\mbox{\hyperlink{classSchedule__Manager_a4cbfba0b3cda990777a78635a9b06d5f}{automatic\_remove}}(Code[2],Code[8].substr(0,Code[8].size()-\/1),Code[5]);}
+\DoxyCodeLine{892             \textcolor{keywordflow}{else} \mbox{\hyperlink{classSchedule__Manager_af3790e92d29224dc2f15e1a38ed8e58b}{automatic\_switch}}(Code[2],Code[11],Code[14].substr(0,Code[14].size()-\/1),Code[5],Code[8]);}
+\DoxyCodeLine{893         \}}
+\DoxyCodeLine{894     \}}
+\DoxyCodeLine{895 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_ae04423b749e6fd9ca40630090411c5af}\label{classSchedule__Manager_ae04423b749e6fd9ca40630090411c5af}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!number\_students@{number\_students}}
+\index{number\_students@{number\_students}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{number\_students()}{number\_students()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::number\+\_\+students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador consultar o número de estudantes inscritos em pelo menos n(um número definido pelo utilizador) ucs. 
+
+Definition at line 289 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{289                                        \{}
+\DoxyCodeLine{290     cout << \textcolor{stringliteral}{"{}Number of ucs: "{}};}
+\DoxyCodeLine{291     \textcolor{keywordtype}{char} i;}
+\DoxyCodeLine{292     cin >> i;}
+\DoxyCodeLine{293     \textcolor{keywordflow}{if} (i>=\textcolor{charliteral}{'0'} and i<=\textcolor{charliteral}{'7'}) \{}
+\DoxyCodeLine{294         \textcolor{keywordtype}{int} res = 0;}
+\DoxyCodeLine{295         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} aluno: \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}) \{}
+\DoxyCodeLine{296             set<string> ucs = aluno.get\_belong\_ucs();}
+\DoxyCodeLine{297             \textcolor{keywordflow}{if} (ucs.size() >= i-\/\textcolor{charliteral}{'0'})res++;}
+\DoxyCodeLine{298         \}}
+\DoxyCodeLine{299         cout << \textcolor{stringliteral}{"{}The number of students registered in at least "{}} << i << \textcolor{stringliteral}{"{} ucs is "{}} << res << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{300     \}}
+\DoxyCodeLine{301     \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}Invalid input!"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{302 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a0449de0a9eaffb00f187b890df3665cf}\label{classSchedule__Manager_a0449de0a9eaffb00f187b890df3665cf}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!print\_history@{print\_history}}
+\index{print\_history@{print\_history}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{print\_history()}{print\_history()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::print\+\_\+history (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador ver o historico de alterações feitas e desfazer a mais recente. 
+
+Definition at line 806 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{806                                      \{}
+\DoxyCodeLine{807     vector<string> historic;}
+\DoxyCodeLine{808     \textcolor{keywordflow}{while}(!(\mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.empty()))\{}
+\DoxyCodeLine{809         \textcolor{keywordtype}{string} change = \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.front();}
+\DoxyCodeLine{810         historic.push\_back(change);}
+\DoxyCodeLine{811         \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.pop();}
+\DoxyCodeLine{812     \}}
+\DoxyCodeLine{813     \textcolor{keywordtype}{bool} cloose = \textcolor{keyword}{false};}
+\DoxyCodeLine{814     \textcolor{keywordflow}{while} (\textcolor{keyword}{true})\{}
+\DoxyCodeLine{815         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Changes-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}} <<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{816         \textcolor{keywordtype}{int} i = 1;}
+\DoxyCodeLine{817         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} change:historic)\{}
+\DoxyCodeLine{818             cout << \textcolor{stringliteral}{"{}|"{}}<<i<<\textcolor{stringliteral}{"{}-\/"{}}<<change<<\textcolor{charliteral}{'|'}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{819             i++;}
+\DoxyCodeLine{820         \}}
+\DoxyCodeLine{821         cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{822         cout << \textcolor{stringliteral}{"{}Do you want to undo the last change?(Y/N) "{}};}
+\DoxyCodeLine{823         \textcolor{keywordtype}{char} k;}
+\DoxyCodeLine{824         cin >> k;}
+\DoxyCodeLine{825         \textcolor{keywordflow}{if}(\_toupper(k) == \textcolor{charliteral}{'Y'})\{}
+\DoxyCodeLine{826             \textcolor{keywordflow}{if}(historic.size() > 0)\{}
+\DoxyCodeLine{827                 stringstream in(historic.back());}
+\DoxyCodeLine{828                 vector<string> Code;}
+\DoxyCodeLine{829                 \textcolor{keywordtype}{string} word;}
+\DoxyCodeLine{830                 \textcolor{keywordflow}{while}(in >> word)\{}
+\DoxyCodeLine{831                     Code.push\_back(word);}
+\DoxyCodeLine{832                 \}}
+\DoxyCodeLine{833                 \textcolor{keywordflow}{if}(Code[0]==\textcolor{stringliteral}{"{}Added"{}})\mbox{\hyperlink{classSchedule__Manager_a4cbfba0b3cda990777a78635a9b06d5f}{automatic\_remove}}(Code[2],Code[8].substr(0,Code[8].size()-\/1),Code[5]);}
+\DoxyCodeLine{834                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(Code[0]==\textcolor{stringliteral}{"{}Removed"{}})\mbox{\hyperlink{classSchedule__Manager_ae58cdffd74c0fa4c18ad7cd1323b77fc}{automatic\_add}}(Code[2],Code[8].substr(0,Code[8].size()-\/1),Code[5]);}
+\DoxyCodeLine{835                 \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{836                     \mbox{\hyperlink{classSchedule__Manager_af3790e92d29224dc2f15e1a38ed8e58b}{automatic\_switch}}(Code[2],Code[5],Code[8],Code[11],Code[14].substr(0,Code[14].size()-\/1));}
+\DoxyCodeLine{837                 \}}
+\DoxyCodeLine{838 }
+\DoxyCodeLine{839                 historic.pop\_back();}
+\DoxyCodeLine{840             \}}
+\DoxyCodeLine{841             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{842                 cout << \textcolor{stringliteral}{"{}There is no changes yet!"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{843                 cout << \textcolor{stringliteral}{"{}Going back to the menu!"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{844                 cloose = \textcolor{keyword}{true};}
+\DoxyCodeLine{845             \}}
+\DoxyCodeLine{846         \}}
+\DoxyCodeLine{847         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\_toupper(k) == \textcolor{charliteral}{'N'})\{}
+\DoxyCodeLine{848             cout << \textcolor{stringliteral}{"{}Going back to the menu!"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{849             cloose = \textcolor{keyword}{true};}
+\DoxyCodeLine{850         \}}
+\DoxyCodeLine{851         \textcolor{keywordflow}{else} cout << \textcolor{stringliteral}{"{}Invalid input!"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{852         \textcolor{keywordflow}{if}(cloose)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{853     \}}
+\DoxyCodeLine{854     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& change : historic)\mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.push(change);}
+\DoxyCodeLine{855 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a586be2d883a77d651dcdc08a6e1fbf7e}\label{classSchedule__Manager_a586be2d883a77d651dcdc08a6e1fbf7e}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!print\_menu@{print\_menu}}
+\index{print\_menu@{print\_menu}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{print\_menu()}{print\_menu()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::print\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104                                   \{}
+\DoxyCodeLine{105     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Menu-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{106     cout << \textcolor{stringliteral}{"{}|1-\/Consult                                 |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{107     cout << \textcolor{stringliteral}{"{}|2-\/Request                                 |"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{108     cout << \textcolor{stringliteral}{"{}|3-\/Historic                                |"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{109     cout << \textcolor{stringliteral}{"{}|4-\/Quit                                    |"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{110     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{111     cout << \textcolor{stringliteral}{"{}Choose the option you want to do: "{}};}
+\DoxyCodeLine{112 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a5af5b5c908bc90fb4f00c9fc55a1b3fa}\label{classSchedule__Manager_a5af5b5c908bc90fb4f00c9fc55a1b3fa}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!remove\_uc@{remove\_uc}}
+\index{remove\_uc@{remove\_uc}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{remove\_uc()}{remove\_uc()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::remove\+\_\+uc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador remover uma unidade curricular ao estudante ,desde que cumpra com as normas. 
+
+Definition at line 523 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{523                                 \{}
+\DoxyCodeLine{524     \textcolor{keywordtype}{string} StudentCode, UcCode;}
+\DoxyCodeLine{525     cout << \textcolor{stringliteral}{"{}Student code? "{}};}
+\DoxyCodeLine{526     cin >> StudentCode;}
+\DoxyCodeLine{527     \textcolor{keywordtype}{bool} exist = \mbox{\hyperlink{classSchedule__Manager_a9531f9167cdabdc1739f711b9292693d}{check\_student}}(StudentCode);}
+\DoxyCodeLine{528     \textcolor{keywordflow}{if}(!exist)\{}
+\DoxyCodeLine{529         cout << \textcolor{stringliteral}{"{}Student not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{530         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{531     \}}
+\DoxyCodeLine{532     cout << \textcolor{stringliteral}{"{}What is the Uc code of the Uc you want to remove? "{}};}
+\DoxyCodeLine{533     cin >> UcCode;}
+\DoxyCodeLine{534     \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode);}
+\DoxyCodeLine{535     \mbox{\hyperlink{classStudent}{Student}} user;}
+\DoxyCodeLine{536     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto}\& student : \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{537         \textcolor{keywordflow}{if}(student.get\_studentCode() == StudentCode)\{}
+\DoxyCodeLine{538             user = student;}
+\DoxyCodeLine{539             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{540         \}}
+\DoxyCodeLine{541     \}}
+\DoxyCodeLine{542     exist = \textcolor{keyword}{false};}
+\DoxyCodeLine{543     \textcolor{keywordtype}{string} ClassCode;}
+\DoxyCodeLine{544     \mbox{\hyperlink{classSchedule}{Schedule}} new\_schedule = user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}();}
+\DoxyCodeLine{545     \mbox{\hyperlink{classLesson}{Lesson}} lesson\_remove;}
+\DoxyCodeLine{546     vector<Lesson> lesson\_t;}
+\DoxyCodeLine{547     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& lesson\_ : user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}().\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{548         \textcolor{keywordflow}{if}(lesson\_.get\_uc\_code() == UcCode)\{}
+\DoxyCodeLine{549             \textcolor{keywordflow}{if}(lesson\_.get\_type() == \textcolor{stringliteral}{"{}T"{}})lesson\_t.push\_back(lesson\_);}
+\DoxyCodeLine{550             \textcolor{keywordflow}{else} lesson\_remove = lesson\_;}
+\DoxyCodeLine{551             ClassCode = lesson\_.\mbox{\hyperlink{classLesson_af4b6f95a409ec47b9842b569e6a43fec}{get\_class\_code}}();}
+\DoxyCodeLine{552             exist = \textcolor{keyword}{true};}
+\DoxyCodeLine{553         \}}
+\DoxyCodeLine{554     \}}
+\DoxyCodeLine{555     \textcolor{keywordflow}{if}(!exist)\{}
+\DoxyCodeLine{556         cout << \textcolor{stringliteral}{"{}Could not find Uc! \(\backslash\)n"{}};}
+\DoxyCodeLine{557         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{558     \}}
+\DoxyCodeLine{559     \textcolor{keywordtype}{int} min = \mbox{\hyperlink{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}{get\_min\_attendance}}(UcCode);}
+\DoxyCodeLine{560     map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{561     \textcolor{keywordtype}{int} class\_size = uc\_class[\{UcCode,ClassCode\}].size();}
+\DoxyCodeLine{562     \textcolor{keywordflow}{if}(class\_size <= min)\{}
+\DoxyCodeLine{563         cout << \textcolor{stringliteral}{"{}Can´t remove from class!"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{564         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{565     \}}
+\DoxyCodeLine{566     new\_schedule.\mbox{\hyperlink{classSchedule_a541275620a493874533458fc57a4e4c5}{remove\_lesson}}(lesson\_remove);}
+\DoxyCodeLine{567     \textcolor{keywordflow}{for} ( \textcolor{keyword}{auto} le:lesson\_t)new\_schedule.\mbox{\hyperlink{classSchedule_a541275620a493874533458fc57a4e4c5}{remove\_lesson}}(le);}
+\DoxyCodeLine{568     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.erase(user);}
+\DoxyCodeLine{569     user.\mbox{\hyperlink{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}{set\_schedule}}(new\_schedule);}
+\DoxyCodeLine{570     \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.insert(user);}
+\DoxyCodeLine{571     \textcolor{keywordtype}{string} change = \textcolor{stringliteral}{"{}Removed student "{}} + StudentCode + \textcolor{stringliteral}{"{} from class "{}} + ClassCode  + \textcolor{stringliteral}{"{} in Uc "{}} + UcCode + \textcolor{stringliteral}{"{}!                                 "{}};}
+\DoxyCodeLine{572     cout << change << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{573     \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.push(change);}
+\DoxyCodeLine{574 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_ac1cf22ebedcf1e8f7b9bc53cf9964aa7}\label{classSchedule__Manager_ac1cf22ebedcf1e8f7b9bc53cf9964aa7}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!request@{request}}
+\index{request@{request}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 435 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{435                                \{}
+\DoxyCodeLine{436     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Request-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{437     cout << \textcolor{stringliteral}{"{}|                      1-\/Add                          |"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{438     cout << \textcolor{stringliteral}{"{}|                      2-\/Remove                       |"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{439     cout << \textcolor{stringliteral}{"{}|                      3-\/Switch                       |"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{440     cout << \textcolor{stringliteral}{"{}|                      4-\/Menu                         |"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{441     cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{442     cout << \textcolor{stringliteral}{"{}Choose the option you want to do: "{}};}
+\DoxyCodeLine{443 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a20a6fc61e3dd2e56f288bbc331fc0b8d}\label{classSchedule__Manager_a20a6fc61e3dd2e56f288bbc331fc0b8d}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!save\_requests@{save\_requests}}
+\index{save\_requests@{save\_requests}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{save\_requests()}{save\_requests()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::save\+\_\+requests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Guarda todos os pedidos feitos pelo utilizador quando desliga o programa. Complexidade \+: O(n), sendo n o número de changes. 
+
+Definition at line 860 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{860                                      \{}
+\DoxyCodeLine{861     ofstream out;}
+\DoxyCodeLine{862     out.open(\textcolor{stringliteral}{"{}../Read\_Info/requests.csv"{}});}
+\DoxyCodeLine{863     \textcolor{keywordflow}{if} (!out.is\_open())\{}
+\DoxyCodeLine{864         cout << \textcolor{stringliteral}{"{}File not found!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{865     \}}
+\DoxyCodeLine{866     \textcolor{keywordflow}{while}(!(\mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.empty()))\{}
+\DoxyCodeLine{867         out << \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.front()<< \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{868         \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.pop();}
+\DoxyCodeLine{869     \}}
+\DoxyCodeLine{870 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_a43037903b26930210e907d8d5640040c}\label{classSchedule__Manager_a43037903b26930210e907d8d5640040c}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!switch\_students@{switch\_students}}
+\index{switch\_students@{switch\_students}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{switch\_students()}{switch\_students()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::switch\+\_\+students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador trocar uma uc ou trocar de turma a uma uc , desde de que cumpra as normas. 
+
+Definition at line 578 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{578                                        \{}
+\DoxyCodeLine{579             \mbox{\hyperlink{classStudent}{Student}} user;}
+\DoxyCodeLine{580             \textcolor{keywordtype}{string} StudentCode, UcCode1, UcCode2, ClassCode;}
+\DoxyCodeLine{581             cout << \textcolor{stringliteral}{"{}What is your Student code? "{}};}
+\DoxyCodeLine{582             cin >> StudentCode;}
+\DoxyCodeLine{583             \textcolor{keywordtype}{bool} exist = \textcolor{keyword}{false};}
+\DoxyCodeLine{584             \textcolor{keywordflow}{for}(\textcolor{keyword}{const} \textcolor{keyword}{auto}\& student : \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}})\{}
+\DoxyCodeLine{585                 \textcolor{keywordflow}{if}(student.get\_studentCode() == StudentCode)\{}
+\DoxyCodeLine{586                     user = student;}
+\DoxyCodeLine{587                     exist = \textcolor{keyword}{true};}
+\DoxyCodeLine{588                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{589                 \}}
+\DoxyCodeLine{590             \}}
+\DoxyCodeLine{591             \textcolor{keywordflow}{if}(!exist)\{}
+\DoxyCodeLine{592                 cout << \textcolor{stringliteral}{"{}Student not found! \(\backslash\)n"{}};}
+\DoxyCodeLine{593                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{594             \}}
+\DoxyCodeLine{595             cout << \textcolor{stringliteral}{"{}What is the UcCode of the lesson you want to remove? "{}};}
+\DoxyCodeLine{596             cin >> UcCode1;}
+\DoxyCodeLine{597             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode1);}
+\DoxyCodeLine{598             cout << \textcolor{stringliteral}{"{}What is the UcCode of the lesson you want to add? "{}};}
+\DoxyCodeLine{599             cin >> UcCode2;}
+\DoxyCodeLine{600             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(UcCode2);}
+\DoxyCodeLine{601             cout << \textcolor{stringliteral}{"{}What is the ClassCode of the class you want to be in? "{}};}
+\DoxyCodeLine{602             cin >> ClassCode;}
+\DoxyCodeLine{603             \mbox{\hyperlink{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}{upper}}(ClassCode);}
+\DoxyCodeLine{604             exist = \textcolor{keyword}{false};}
+\DoxyCodeLine{605             \textcolor{keywordtype}{string} removed\_class;}
+\DoxyCodeLine{606             \mbox{\hyperlink{classSchedule}{Schedule}} new\_schedule = user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}();}
+\DoxyCodeLine{607             \mbox{\hyperlink{classLesson}{Lesson}} lesson\_remove;}
+\DoxyCodeLine{608             vector<Lesson> lesson\_t;}
+\DoxyCodeLine{609             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& lesson\_ : user.\mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\_schedule}}().\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{610                 \textcolor{keywordflow}{if}(lesson\_.get\_uc\_code() == UcCode1)\{}
+\DoxyCodeLine{611                     \textcolor{keywordflow}{if}(lesson\_.get\_type() == \textcolor{stringliteral}{"{}T"{}})lesson\_t.push\_back(lesson\_);}
+\DoxyCodeLine{612                     \textcolor{keywordflow}{else} lesson\_remove = lesson\_;}
+\DoxyCodeLine{613                     removed\_class = lesson\_.\mbox{\hyperlink{classLesson_af4b6f95a409ec47b9842b569e6a43fec}{get\_class\_code}}();}
+\DoxyCodeLine{614                     exist = \textcolor{keyword}{true};}
+\DoxyCodeLine{615                     \}}
+\DoxyCodeLine{616             \}}
+\DoxyCodeLine{617             \textcolor{keywordflow}{if}(!exist)\{}
+\DoxyCodeLine{618                 cout << \textcolor{stringliteral}{"{}Could not find Uc! \(\backslash\)n"{}};}
+\DoxyCodeLine{619                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{620             \}}
+\DoxyCodeLine{621             \textcolor{keywordtype}{int} min = \mbox{\hyperlink{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}{get\_min\_attendance}}(UcCode1);}
+\DoxyCodeLine{622             map <pair<string,string >,vector<string>> uc\_class = \mbox{\hyperlink{classSchedule__Manager_ac5fe2a18cbeee8442ba94dfa74bdf052}{get\_uc\_class}}();}
+\DoxyCodeLine{623             \textcolor{keywordtype}{int} class\_size = uc\_class[\{UcCode1,removed\_class\}].size();}
+\DoxyCodeLine{624             \textcolor{keywordflow}{if}(class\_size <= min)\{}
+\DoxyCodeLine{625                 cout << \textcolor{stringliteral}{"{}Can´t remove from class!"{}} << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{626                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{627             \}}
+\DoxyCodeLine{628             new\_schedule.\mbox{\hyperlink{classSchedule_a541275620a493874533458fc57a4e4c5}{remove\_lesson}}(lesson\_remove);}
+\DoxyCodeLine{629             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} le:lesson\_t)new\_schedule.\mbox{\hyperlink{classSchedule_a541275620a493874533458fc57a4e4c5}{remove\_lesson}}(le);}
+\DoxyCodeLine{630             \textcolor{keywordtype}{bool} encontered\_lesson = \textcolor{keyword}{false};}
+\DoxyCodeLine{631             \textcolor{keywordtype}{bool} done = \textcolor{keyword}{false};}
+\DoxyCodeLine{632             \mbox{\hyperlink{classLesson}{Lesson}} lesson\_add;}
+\DoxyCodeLine{633             vector<Lesson> lesson\_t\_add;}
+\DoxyCodeLine{634             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} turma: \mbox{\hyperlink{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}{classes}})\{}
+\DoxyCodeLine{635                 \textcolor{keywordflow}{if}(ClassCode == turma.get\_classCode())\{}
+\DoxyCodeLine{636                     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} aula : turma.get\_schedule().get\_lessons())\{}
+\DoxyCodeLine{637                         \textcolor{keywordflow}{if}(UcCode2 == aula.get\_uc\_code())\{}
+\DoxyCodeLine{638                             \textcolor{keywordflow}{if}(aula.get\_type() == \textcolor{stringliteral}{"{}T"{}})lesson\_t\_add.push\_back(aula);}
+\DoxyCodeLine{639                             \textcolor{keywordflow}{else} lesson\_add = aula;}
+\DoxyCodeLine{640                             encontered\_lesson = \textcolor{keyword}{true};}
+\DoxyCodeLine{641                             done = \textcolor{keyword}{true};}
+\DoxyCodeLine{642                         \}}
+\DoxyCodeLine{643                     \}}
+\DoxyCodeLine{644                 \}}
+\DoxyCodeLine{645             \}}
+\DoxyCodeLine{646             \textcolor{keywordflow}{if}(!encontered\_lesson)\{}
+\DoxyCodeLine{647                 cout << \textcolor{stringliteral}{"{}Could not find Uc to add! \(\backslash\)n"{}};}
+\DoxyCodeLine{648             \}}
+\DoxyCodeLine{649             \textcolor{keywordflow}{for}(\textcolor{keyword}{auto}\& lesson\_ : new\_schedule.\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{650                 \textcolor{keywordflow}{if}(lesson\_.get\_weekday() == lesson\_add.\mbox{\hyperlink{classLesson_a7e2996ef61ab3373746caa965f1c97c6}{get\_weekday}}())\{}
+\DoxyCodeLine{651                     \textcolor{keywordflow}{if}(lesson\_.get\_uc\_code() == UcCode2)\{}
+\DoxyCodeLine{652                         cout << \textcolor{stringliteral}{"{}You're already in a Class in that Uc. \(\backslash\)n"{}};}
+\DoxyCodeLine{653                         done = \textcolor{keyword}{false};}
+\DoxyCodeLine{654                     \}}
+\DoxyCodeLine{655                     \textcolor{keywordflow}{if}((lesson\_add.\mbox{\hyperlink{classLesson_ac310f5622ef83f6f61778a7b758ec11d}{get\_start\_time}}() + lesson\_add.\mbox{\hyperlink{classLesson_a3fddfe03c45042df7f01342222a49680}{get\_duration}}() > lesson\_.get\_start\_time()) \&\& (lesson\_add.\mbox{\hyperlink{classLesson_ac310f5622ef83f6f61778a7b758ec11d}{get\_start\_time}}() < lesson\_.get\_start\_time() + lesson\_.get\_duration()))\{}
+\DoxyCodeLine{656                         cout << \textcolor{stringliteral}{"{}Lesson Overlap, you can't add this lesson to your schedule. \(\backslash\)n"{}};}
+\DoxyCodeLine{657                         done = \textcolor{keyword}{false};}
+\DoxyCodeLine{658                     \}}
+\DoxyCodeLine{659                 \}}
+\DoxyCodeLine{660             \}}
+\DoxyCodeLine{661             min = \mbox{\hyperlink{classSchedule__Manager_a836c6a4dad4813bd92344545729832ef}{get\_min\_attendance}}(UcCode2);}
+\DoxyCodeLine{662             class\_size = uc\_class[\{UcCode2,ClassCode\}].size();}
+\DoxyCodeLine{663             \textcolor{keywordflow}{if}(class\_size >= min + 4)\{}
+\DoxyCodeLine{664                 cout << \textcolor{stringliteral}{"{}Class full!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{665                 done = \textcolor{keyword}{false};}
+\DoxyCodeLine{666             \}}
+\DoxyCodeLine{667             \textcolor{keywordflow}{if} (done) \{}
+\DoxyCodeLine{668                 new\_schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(lesson\_add);}
+\DoxyCodeLine{669                 \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} le :lesson\_t\_add)new\_schedule.\mbox{\hyperlink{classSchedule_ae0bfe3c5efe3f598f5c4b61eb5988c8a}{add\_lesson}}(le);}
+\DoxyCodeLine{670                 \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.erase(user);}
+\DoxyCodeLine{671                 user.\mbox{\hyperlink{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}{set\_schedule}}(new\_schedule);}
+\DoxyCodeLine{672                 \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}.insert(user);}
+\DoxyCodeLine{673                 \textcolor{keywordtype}{string} change = \textcolor{stringliteral}{"{}Switched student "{}} + StudentCode + \textcolor{stringliteral}{"{} from class "{}} + removed\_class + \textcolor{stringliteral}{"{} in Uc "{}} + UcCode1 +\textcolor{stringliteral}{"{} to class "{}} + ClassCode + \textcolor{stringliteral}{"{} in Uc "{}} + UcCode2 +\textcolor{stringliteral}{"{}!"{}};}
+\DoxyCodeLine{674                 cout << change << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{675                 \mbox{\hyperlink{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}{changes}}.push(change);}
+\DoxyCodeLine{676             \}}
+\DoxyCodeLine{677 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_ad89cee8f9a459f9851c8ebbc6f520925}\label{classSchedule__Manager_ad89cee8f9a459f9851c8ebbc6f520925}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!uc\_most\_students@{uc\_most\_students}}
+\index{uc\_most\_students@{uc\_most\_students}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{uc\_most\_students()}{uc\_most\_students()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::uc\+\_\+most\+\_\+students (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Permite ao utilizador consultar a uc com mais alunos. 
+
+Definition at line 408 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{408                                        \{}
+\DoxyCodeLine{409     stack<string> ucs;}
+\DoxyCodeLine{410     unordered\_map<string, vector<string>> student\_ucs;}
+\DoxyCodeLine{411     \textcolor{keywordtype}{int} max = 0;}
+\DoxyCodeLine{412     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} student: \mbox{\hyperlink{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}{students}}) \{}
+\DoxyCodeLine{413         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} course: student.get\_belong\_ucs())student\_ucs[course].push\_back(student.get\_name());}
+\DoxyCodeLine{414     \}}
+\DoxyCodeLine{415     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& pair: student\_ucs) \{}
+\DoxyCodeLine{416         \textcolor{keywordtype}{string} uc = pair.first;}
+\DoxyCodeLine{417         vector<string> alunos = pair.second;}
+\DoxyCodeLine{418         \textcolor{keywordflow}{if} (ucs.empty()) \{}
+\DoxyCodeLine{419             ucs.push(uc);}
+\DoxyCodeLine{420             max = alunos.size();}
+\DoxyCodeLine{421         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (alunos.size() > max) \{}
+\DoxyCodeLine{422             max = alunos.size();}
+\DoxyCodeLine{423             \textcolor{keywordflow}{while} (!ucs.empty())ucs.pop();}
+\DoxyCodeLine{424             ucs.push(uc);}
+\DoxyCodeLine{425         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (alunos.size() == max) \{}
+\DoxyCodeLine{426             ucs.push(uc);}
+\DoxyCodeLine{427         \}}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429     \}}
+\DoxyCodeLine{430     \textcolor{keywordflow}{while} (!ucs.empty()) \{}
+\DoxyCodeLine{431         cout << ucs.top() << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{432         ucs.pop();}
+\DoxyCodeLine{433     \}}
+\DoxyCodeLine{434    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}\label{classSchedule__Manager_af4e4cd0de2db7a99586963ed4b653ce4}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!upper@{upper}}
+\index{upper@{upper}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{upper()}{upper()}}
+{\footnotesize\ttfamily void Schedule\+\_\+\+Manager\+::upper (\begin{DoxyParamCaption}\item[{string \&}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Percorre uma string e coloca todos os seus characters em upper\+\_\+case 
+\begin{DoxyParams}{Parameters}
+{\em string} & que vai ser colocada em upper\+\_\+case \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file Schedule\+\_\+\+Manager.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100                                             \{}
+\DoxyCodeLine{101     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& i :word)i= \_toupper(i);}
+\DoxyCodeLine{102 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}\label{classSchedule__Manager_abd69c98a89bfff6908f7308cb7edd2a1}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!changes@{changes}}
+\index{changes@{changes}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{changes}{changes}}
+{\footnotesize\ttfamily queue$<$string$>$ Schedule\+\_\+\+Manager\+::changes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file Schedule\+\_\+\+Manager.\+h.
+
+\mbox{\Hypertarget{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}\label{classSchedule__Manager_afa5ad9471107c90631e6906aa67b4151}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!classes@{classes}}
+\index{classes@{classes}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{classes}{classes}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{classUcClass}{Uc\+Class}}$>$ Schedule\+\_\+\+Manager\+::classes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file Schedule\+\_\+\+Manager.\+h.
+
+\mbox{\Hypertarget{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}\label{classSchedule__Manager_a109dd421b1379a3d993004bdac289eb2}} 
+\index{Schedule\_Manager@{Schedule\_Manager}!students@{students}}
+\index{students@{students}!Schedule\_Manager@{Schedule\_Manager}}
+\doxysubsubsection{\texorpdfstring{students}{students}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{classStudent}{Student}}$>$ Schedule\+\_\+\+Manager\+::students\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file Schedule\+\_\+\+Manager.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{Schedule__Manager_8h}{Schedule\+\_\+\+Manager.\+h}}\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{Schedule__Manager_8cpp}{Schedule\+\_\+\+Manager.\+cpp}}\end{DoxyCompactItemize}

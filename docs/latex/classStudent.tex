@@ -1,0 +1,317 @@
+\hypertarget{classStudent}{}\doxysection{Student Class Reference}
+\label{classStudent}\index{Student@{Student}}
+
+
+{\ttfamily \#include $<$Student.\+h$>$}
+
+
+
+Collaboration diagram for Student\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStudent_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}} ()
+\item 
+\mbox{\hyperlink{classStudent_ae490b5f6c08e7e8a646d0e4e13989562}{Student}} (string name, string student\+Code, \mbox{\hyperlink{classSchedule}{Schedule}} schedule)
+\item 
+string \mbox{\hyperlink{classStudent_ae489956a740c6fb570344c7010aa6841}{get\+\_\+name}} () const
+\item 
+\mbox{\hyperlink{classSchedule}{Schedule}} \mbox{\hyperlink{classStudent_abed0078664face084dcbd7222c731af1}{get\+\_\+schedule}} () const
+\item 
+string \mbox{\hyperlink{classStudent_ae4b4fc6733883d16bf85670f11b3ad2b}{get\+\_\+student\+Code}} () const
+\item 
+set$<$ string $>$ \mbox{\hyperlink{classStudent_a2f5e2efea6ea72c6fb0d40868df62741}{get\+\_\+belong\+\_\+class}} () const
+\item 
+set$<$ string $>$ \mbox{\hyperlink{classStudent_a4f0dbe090a0d2a3bcc15bf479a08d6f4}{get\+\_\+belong\+\_\+ucs}} ()
+\item 
+void \mbox{\hyperlink{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}{set\+\_\+schedule}} (\mbox{\hyperlink{classSchedule}{Schedule}} schedule)
+\item 
+void \mbox{\hyperlink{classStudent_a7698ba754691f2fbb9de56fd3eaf188e}{set\+\_\+name}} (string name)
+\item 
+void \mbox{\hyperlink{classStudent_af5e2cb086abf6da3fbc4f9a5f243d9d1}{set\+\_\+student\+Code}} (string student\+Code)
+\item 
+bool \mbox{\hyperlink{classStudent_a3d14036d86cf0f463db9ad5fa87f1d92}{operator$<$}} (\mbox{\hyperlink{classStudent}{Student}} student) const
+\item 
+bool \mbox{\hyperlink{classStudent_ac5603e98412e116b00a3db5b1105787d}{operator==}} (\mbox{\hyperlink{classStudent}{Student}} student) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classStudent_af035a1ac510d8f9b27475932ea0cb1b5}{name\+\_\+}}
+\item 
+string \mbox{\hyperlink{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}{student\+Code\+\_\+}}
+\item 
+\mbox{\hyperlink{classSchedule}{Schedule}} \mbox{\hyperlink{classStudent_ac672e09059a5c612991aa6f471542800}{schedule\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 14 of file Student.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStudent_af9168cedbfa5565cf0b20c1a9d3f5c9d}\label{classStudent_af9168cedbfa5565cf0b20c1a9d3f5c9d}} 
+\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Student\+::\+Student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 : \mbox{\hyperlink{classStudent_af035a1ac510d8f9b27475932ea0cb1b5}{name\_}}(\textcolor{stringliteral}{"{}"{}}), \mbox{\hyperlink{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}{studentCode\_}}(\textcolor{stringliteral}{"{}"{}}), \mbox{\hyperlink{classStudent_ac672e09059a5c612991aa6f471542800}{schedule\_}}()\{\};}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_ae490b5f6c08e7e8a646d0e4e13989562}\label{classStudent_ae490b5f6c08e7e8a646d0e4e13989562}} 
+\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Student\+::\+Student (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{string}]{student\+Code,  }\item[{\mbox{\hyperlink{classSchedule}{Schedule}}}]{schedule }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9                                                                 : \mbox{\hyperlink{classStudent_af035a1ac510d8f9b27475932ea0cb1b5}{name\_}}(name),\mbox{\hyperlink{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}{studentCode\_}}(studentCode),}
+\DoxyCodeLine{10                                                                     \mbox{\hyperlink{classStudent_ac672e09059a5c612991aa6f471542800}{schedule\_}}(schedule)\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStudent_a2f5e2efea6ea72c6fb0d40868df62741}\label{classStudent_a2f5e2efea6ea72c6fb0d40868df62741}} 
+\index{Student@{Student}!get\_belong\_class@{get\_belong\_class}}
+\index{get\_belong\_class@{get\_belong\_class}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{get\_belong\_class()}{get\_belong\_class()}}
+{\footnotesize\ttfamily set$<$ string $>$ Student\+::get\+\_\+belong\+\_\+class (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Percorre o horário do aluno , vê a turma em que está a cada aula e mete o código da turma num set \begin{DoxyReturn}{Returns}
+retorna um set com as turmas a que o objeto student pertence 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                                             \{}
+\DoxyCodeLine{19     set<string> s;}
+\DoxyCodeLine{20     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const}\& lesson : this-\/>\mbox{\hyperlink{classStudent_ac672e09059a5c612991aa6f471542800}{schedule\_}}.\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{21         s.insert(lesson.get\_class\_code());}
+\DoxyCodeLine{22     \}}
+\DoxyCodeLine{23     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{24 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_a4f0dbe090a0d2a3bcc15bf479a08d6f4}\label{classStudent_a4f0dbe090a0d2a3bcc15bf479a08d6f4}} 
+\index{Student@{Student}!get\_belong\_ucs@{get\_belong\_ucs}}
+\index{get\_belong\_ucs@{get\_belong\_ucs}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{get\_belong\_ucs()}{get\_belong\_ucs()}}
+{\footnotesize\ttfamily set$<$ string $>$ Student\+::get\+\_\+belong\+\_\+ucs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Percorre o horário do aluno , vê as ucs em que está e mete o código de cada uc num set \begin{DoxyReturn}{Returns}
+retorna um set com as ucs a que o objeto student pertence 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{29                                     \{}
+\DoxyCodeLine{30     set<string> s;}
+\DoxyCodeLine{31     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \textcolor{keyword}{const}\& lesson : this-\/>\mbox{\hyperlink{classStudent_ac672e09059a5c612991aa6f471542800}{schedule\_}}.\mbox{\hyperlink{classSchedule_aaff948152fad7ea8ba311fefac1045b0}{get\_lessons}}())\{}
+\DoxyCodeLine{32         s.insert(lesson.get\_uc\_code());}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34     \textcolor{keywordflow}{return} s;}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_ae489956a740c6fb570344c7010aa6841}\label{classStudent_ae489956a740c6fb570344c7010aa6841}} 
+\index{Student@{Student}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily string Student\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 11 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classStudent_af035a1ac510d8f9b27475932ea0cb1b5}{name\_}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_abed0078664face084dcbd7222c731af1}\label{classStudent_abed0078664face084dcbd7222c731af1}} 
+\index{Student@{Student}!get\_schedule@{get\_schedule}}
+\index{get\_schedule@{get\_schedule}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{get\_schedule()}{get\_schedule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSchedule}{Schedule}} Student\+::get\+\_\+schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 12 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{12 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classStudent_ac672e09059a5c612991aa6f471542800}{schedule\_}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_ae4b4fc6733883d16bf85670f11b3ad2b}\label{classStudent_ae4b4fc6733883d16bf85670f11b3ad2b}} 
+\index{Student@{Student}!get\_studentCode@{get\_studentCode}}
+\index{get\_studentCode@{get\_studentCode}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{get\_studentCode()}{get\_studentCode()}}
+{\footnotesize\ttfamily string Student\+::get\+\_\+student\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 13 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}{studentCode\_}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_a3d14036d86cf0f463db9ad5fa87f1d92}\label{classStudent_a3d14036d86cf0f463db9ad5fa87f1d92}} 
+\index{Student@{Student}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Student\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStudent}{Student}}}]{student }\end{DoxyParamCaption}) const}
+
+Utiliza o operador para comparar dois estudantes com base no seu student\+\_\+code 
+\begin{DoxyParams}{Parameters}
+{\em student} & o estudante para comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se o estudante tiver studentcode menor que o other student, caso contrário retorna falso. 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44                                             \{}
+\DoxyCodeLine{45     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}{studentCode\_}} < student.\mbox{\hyperlink{classStudent_ae4b4fc6733883d16bf85670f11b3ad2b}{get\_studentCode}}();}
+\DoxyCodeLine{46 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_ac5603e98412e116b00a3db5b1105787d}\label{classStudent_ac5603e98412e116b00a3db5b1105787d}} 
+\index{Student@{Student}!operator==@{operator==}}
+\index{operator==@{operator==}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Student\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classStudent}{Student}}}]{student }\end{DoxyParamCaption}) const}
+
+Utiliza o operador para comparar dois estudantes com base no seu student\+\_\+code 
+\begin{DoxyParams}{Parameters}
+{\em student} & o estudante para comparar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se o estudante tiver studentcode igual ao other student, caso contrário retorna falso. 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52                                               \{}
+\DoxyCodeLine{53     \textcolor{keywordflow}{return} \mbox{\hyperlink{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}{studentCode\_}} == student.\mbox{\hyperlink{classStudent_ae4b4fc6733883d16bf85670f11b3ad2b}{get\_studentCode}}();}
+\DoxyCodeLine{54 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_a7698ba754691f2fbb9de56fd3eaf188e}\label{classStudent_a7698ba754691f2fbb9de56fd3eaf188e}} 
+\index{Student@{Student}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void Student\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{36 \{\mbox{\hyperlink{classStudent_af035a1ac510d8f9b27475932ea0cb1b5}{name\_}} = name;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}\label{classStudent_a5d647ca8e65b24ba913bc4a90fc4c054}} 
+\index{Student@{Student}!set\_schedule@{set\_schedule}}
+\index{set\_schedule@{set\_schedule}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{set\_schedule()}{set\_schedule()}}
+{\footnotesize\ttfamily void Student\+::set\+\_\+schedule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSchedule}{Schedule}}}]{schedule }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{37 \{\mbox{\hyperlink{classStudent_ac672e09059a5c612991aa6f471542800}{schedule\_}} = schedule;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classStudent_af5e2cb086abf6da3fbc4f9a5f243d9d1}\label{classStudent_af5e2cb086abf6da3fbc4f9a5f243d9d1}} 
+\index{Student@{Student}!set\_studentCode@{set\_studentCode}}
+\index{set\_studentCode@{set\_studentCode}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{set\_studentCode()}{set\_studentCode()}}
+{\footnotesize\ttfamily void Student\+::set\+\_\+student\+Code (\begin{DoxyParamCaption}\item[{string}]{student\+Code }\end{DoxyParamCaption})}
+
+
+
+Definition at line 38 of file Student.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{38 \{\mbox{\hyperlink{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}{studentCode\_}} = studentCode;\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classStudent_af035a1ac510d8f9b27475932ea0cb1b5}\label{classStudent_af035a1ac510d8f9b27475932ea0cb1b5}} 
+\index{Student@{Student}!name\_@{name\_}}
+\index{name\_@{name\_}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{name\_}{name\_}}
+{\footnotesize\ttfamily string Student\+::name\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file Student.\+h.
+
+\mbox{\Hypertarget{classStudent_ac672e09059a5c612991aa6f471542800}\label{classStudent_ac672e09059a5c612991aa6f471542800}} 
+\index{Student@{Student}!schedule\_@{schedule\_}}
+\index{schedule\_@{schedule\_}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{schedule\_}{schedule\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSchedule}{Schedule}} Student\+::schedule\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 31 of file Student.\+h.
+
+\mbox{\Hypertarget{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}\label{classStudent_a7fc3a4d2719201ab757dcb184330c4cf}} 
+\index{Student@{Student}!studentCode\_@{studentCode\_}}
+\index{studentCode\_@{studentCode\_}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{studentCode\_}{studentCode\_}}
+{\footnotesize\ttfamily string Student\+::student\+Code\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Student.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{Student_8h}{Student.\+h}}\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{Student_8cpp}{Student.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\hypertarget{main_8cpp}{}\doxysection{/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/main.cpp File Reference}
+\label{main_8cpp}\index{/home/joao/Desktop/AED/AED2324\_PRJ1\_G10/schedule/main.cpp@{/home/joao/Desktop/AED/AED2324\_PRJ1\_G10/schedule/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Schedule\+\_\+\+Manager.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file main.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4            \{}
+\DoxyCodeLine{5     \mbox{\hyperlink{classSchedule__Manager}{Schedule\_Manager}} schedulemanager;}
+\DoxyCodeLine{6     schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a5358d05a9f09b71983af2b23aff2b6bb}{load\_request}}();}
+\DoxyCodeLine{7     \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{8         schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a586be2d883a77d651dcdc08a6e1fbf7e}{print\_menu}}();}
+\DoxyCodeLine{9         \textcolor{keywordtype}{char} i;}
+\DoxyCodeLine{10         cin >> i;}
+\DoxyCodeLine{11         \textcolor{keywordtype}{bool} close = \textcolor{keyword}{false};}
+\DoxyCodeLine{12         \textcolor{keywordflow}{switch}(i)\{}
+\DoxyCodeLine{13             \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{14                 \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{15                     schedulemanager.\mbox{\hyperlink{classSchedule__Manager_afe1a1abfb7a9b9b0fb6d8b6ca9a38f28}{consult}}();}
+\DoxyCodeLine{16                     \textcolor{keywordtype}{char} k;}
+\DoxyCodeLine{17                     cin >> k;}
+\DoxyCodeLine{18                     \textcolor{keywordtype}{bool} close\_consult = \textcolor{keyword}{false};}
+\DoxyCodeLine{19                     \textcolor{keywordflow}{switch}(k)\{}
+\DoxyCodeLine{20                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{21                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a3f504cd4f81071565be9df821718ec24}{consult\_schedule}}();}
+\DoxyCodeLine{22                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{23                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{24                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_ace26dbd58ab19a5a150de07c58d0d35a}{consult\_students}}();}
+\DoxyCodeLine{25                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{26                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{27                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_ae04423b749e6fd9ca40630090411c5af}{number\_students}}();}
+\DoxyCodeLine{28                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{29                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{30                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a243038f55d7f6b194f6daaced749858d}{consult\_occuption}}();}
+\DoxyCodeLine{31                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{32                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'5'}:}
+\DoxyCodeLine{33                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_ad89cee8f9a459f9851c8ebbc6f520925}{uc\_most\_students}}();}
+\DoxyCodeLine{34                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{35                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'6'}:}
+\DoxyCodeLine{36                             close\_consult = \textcolor{keyword}{true};}
+\DoxyCodeLine{37                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{38                         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{39                             cout << \textcolor{stringliteral}{"{}Invalid input!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{40                     \}}
+\DoxyCodeLine{41                     \textcolor{keywordflow}{if} (close\_consult)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{42                 \}}
+\DoxyCodeLine{43                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{44             \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{45                 \textcolor{keywordflow}{while}(\textcolor{keyword}{true})\{}
+\DoxyCodeLine{46                     schedulemanager.\mbox{\hyperlink{classSchedule__Manager_ac1cf22ebedcf1e8f7b9bc53cf9964aa7}{request}}();}
+\DoxyCodeLine{47                     \textcolor{keywordtype}{char} k;}
+\DoxyCodeLine{48                     cin >> k;}
+\DoxyCodeLine{49                     \textcolor{keywordtype}{bool} close\_request = \textcolor{keyword}{false};}
+\DoxyCodeLine{50                     \textcolor{keywordflow}{switch} (k) \{}
+\DoxyCodeLine{51                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}: \{}
+\DoxyCodeLine{52                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_aa0eaaa787ecb5304d2cf96ad671ec515}{add\_uc}}();}
+\DoxyCodeLine{53                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54                         \}}
+\DoxyCodeLine{55                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}: \{}
+\DoxyCodeLine{56                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a5af5b5c908bc90fb4f00c9fc55a1b3fa}{remove\_uc}}();}
+\DoxyCodeLine{57                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{58                         \}}
+\DoxyCodeLine{59                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}: \{}
+\DoxyCodeLine{60                             schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a43037903b26930210e907d8d5640040c}{switch\_students}}();}
+\DoxyCodeLine{61                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{62                         \}}
+\DoxyCodeLine{63                         \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{64                             close\_request = \textcolor{keyword}{true};}
+\DoxyCodeLine{65                             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{66                         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{67                             cout << \textcolor{stringliteral}{"{}Invalid input!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{68                     \}}
+\DoxyCodeLine{69                     \textcolor{keywordflow}{if}(close\_request)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{70                 \}}
+\DoxyCodeLine{71                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{72             \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}:}
+\DoxyCodeLine{73                 schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a0449de0a9eaffb00f187b890df3665cf}{print\_history}}();}
+\DoxyCodeLine{74                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{75             \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{76                 close = \textcolor{keyword}{true};}
+\DoxyCodeLine{77                 schedulemanager.\mbox{\hyperlink{classSchedule__Manager_a20a6fc61e3dd2e56f288bbc331fc0b8d}{save\_requests}}();}
+\DoxyCodeLine{78                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{79             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{80                 cout << \textcolor{stringliteral}{"{}Invalid input!"{}}<<\textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \}}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if} (close)\textcolor{keywordflow}{break};}
+\DoxyCodeLine{84     \}}
+\DoxyCodeLine{85     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{86 \}}
+
+\end{DoxyCode}

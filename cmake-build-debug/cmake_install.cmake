@@ -1,4 +1,4 @@
-# Install script for directory: /home/joao/Desktop/AED/schedule
+# Install script for directory: /home/joao/Desktop/AED/AED2324_PRJ1_G10/schedule
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/joao/Desktop/AED/schedule/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/joao/Desktop/AED/AED2324_PRJ1_G10/schedule/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

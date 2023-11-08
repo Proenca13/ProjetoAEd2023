@@ -24,6 +24,7 @@ public:
     void set_name(string name);
     void set_studentCode(string studentCode);
     bool operator<(Student student) const;
+    bool operator==(Student student) const ;
 private:
     string name_;
     string studentCode_;

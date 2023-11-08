@@ -1,0 +1,174 @@
+\hypertarget{classUcClass}{}\doxysection{Uc\+Class Class Reference}
+\label{classUcClass}\index{UcClass@{UcClass}}
+
+
+{\ttfamily \#include $<$Uc\+Class.\+h$>$}
+
+
+
+Collaboration diagram for Uc\+Class\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUcClass_a8f834766a4b269ac1160ae7f836c04b0}{Uc\+Class}} (string class\+Code, \mbox{\hyperlink{classSchedule}{Schedule}} schedule)
+\item 
+string \mbox{\hyperlink{classUcClass_aed91e568500bfac39128100c57fabe08}{get\+\_\+class\+Code}} () const
+\item 
+\mbox{\hyperlink{classSchedule}{Schedule}} \mbox{\hyperlink{classUcClass_ae738699c692cc677f6e23311d68ddcb3}{get\+\_\+schedule}} () const
+\item 
+void \mbox{\hyperlink{classUcClass_a0c85cde346df646dbc8acf75d1272b8f}{set\+\_\+class\+Code}} (string class\+Code)
+\item 
+void \mbox{\hyperlink{classUcClass_a3b7302d6e8cca2d16b867ba9813bc935}{set\+\_\+schedule}} (\mbox{\hyperlink{classSchedule}{Schedule}} schedule)
+\item 
+bool \mbox{\hyperlink{classUcClass_acb4e828366692fbfd58b56fab729e8e8}{operator$<$}} (\mbox{\hyperlink{classUcClass}{Uc\+Class}} uclass) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classUcClass_a5045dbf13f6a8b8744c83f0e02025b15}{class\+Code\+\_\+}}
+\item 
+\mbox{\hyperlink{classSchedule}{Schedule}} \mbox{\hyperlink{classUcClass_aa4fed1401dbda91e4732d4e95f1daa13}{schedule\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 12 of file Uc\+Class.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classUcClass_a8f834766a4b269ac1160ae7f836c04b0}\label{classUcClass_a8f834766a4b269ac1160ae7f836c04b0}} 
+\index{UcClass@{UcClass}!UcClass@{UcClass}}
+\index{UcClass@{UcClass}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{UcClass()}{UcClass()}}
+{\footnotesize\ttfamily Uc\+Class\+::\+Uc\+Class (\begin{DoxyParamCaption}\item[{string}]{class\+Code,  }\item[{\mbox{\hyperlink{classSchedule}{Schedule}}}]{schedule }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Uc\+Class.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7 : \mbox{\hyperlink{classUcClass_a5045dbf13f6a8b8744c83f0e02025b15}{classCode\_}}(classCode), \mbox{\hyperlink{classUcClass_aa4fed1401dbda91e4732d4e95f1daa13}{schedule\_}} (schedule)\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUcClass_aed91e568500bfac39128100c57fabe08}\label{classUcClass_aed91e568500bfac39128100c57fabe08}} 
+\index{UcClass@{UcClass}!get\_classCode@{get\_classCode}}
+\index{get\_classCode@{get\_classCode}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{get\_classCode()}{get\_classCode()}}
+{\footnotesize\ttfamily string Uc\+Class\+::get\+\_\+class\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 9 of file Uc\+Class.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{9 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classUcClass_a5045dbf13f6a8b8744c83f0e02025b15}{classCode\_}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUcClass_ae738699c692cc677f6e23311d68ddcb3}\label{classUcClass_ae738699c692cc677f6e23311d68ddcb3}} 
+\index{UcClass@{UcClass}!get\_schedule@{get\_schedule}}
+\index{get\_schedule@{get\_schedule}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{get\_schedule()}{get\_schedule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSchedule}{Schedule}} Uc\+Class\+::get\+\_\+schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 8 of file Uc\+Class.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{classUcClass_aa4fed1401dbda91e4732d4e95f1daa13}{schedule\_}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUcClass_acb4e828366692fbfd58b56fab729e8e8}\label{classUcClass_acb4e828366692fbfd58b56fab729e8e8}} 
+\index{UcClass@{UcClass}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Uc\+Class\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classUcClass}{Uc\+Class}}}]{uclass }\end{DoxyParamCaption}) const}
+
+Utiliza o operador para comparar duas turmas com base no seu class\+Code 
+\begin{DoxyParams}{Parameters}
+{\em uclass} & a turma para comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se a turma tiver class\+Code menor que a uclass, caso contrário retorna falso. 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file Uc\+Class.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{17                                            \{}
+\DoxyCodeLine{18     \textcolor{keywordflow}{return} \mbox{\hyperlink{classUcClass_a5045dbf13f6a8b8744c83f0e02025b15}{classCode\_}} < uclass.\mbox{\hyperlink{classUcClass_aed91e568500bfac39128100c57fabe08}{get\_classCode}}();}
+\DoxyCodeLine{19 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUcClass_a0c85cde346df646dbc8acf75d1272b8f}\label{classUcClass_a0c85cde346df646dbc8acf75d1272b8f}} 
+\index{UcClass@{UcClass}!set\_classCode@{set\_classCode}}
+\index{set\_classCode@{set\_classCode}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{set\_classCode()}{set\_classCode()}}
+{\footnotesize\ttfamily void Uc\+Class\+::set\+\_\+class\+Code (\begin{DoxyParamCaption}\item[{string}]{class\+Code }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file Uc\+Class.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10 \{ \mbox{\hyperlink{classUcClass_a5045dbf13f6a8b8744c83f0e02025b15}{classCode\_}} = classCode;\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classUcClass_a3b7302d6e8cca2d16b867ba9813bc935}\label{classUcClass_a3b7302d6e8cca2d16b867ba9813bc935}} 
+\index{UcClass@{UcClass}!set\_schedule@{set\_schedule}}
+\index{set\_schedule@{set\_schedule}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{set\_schedule()}{set\_schedule()}}
+{\footnotesize\ttfamily void Uc\+Class\+::set\+\_\+schedule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSchedule}{Schedule}}}]{schedule }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Uc\+Class.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{11 \{ \mbox{\hyperlink{classUcClass_aa4fed1401dbda91e4732d4e95f1daa13}{schedule\_}} = schedule;\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classUcClass_a5045dbf13f6a8b8744c83f0e02025b15}\label{classUcClass_a5045dbf13f6a8b8744c83f0e02025b15}} 
+\index{UcClass@{UcClass}!classCode\_@{classCode\_}}
+\index{classCode\_@{classCode\_}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{classCode\_}{classCode\_}}
+{\footnotesize\ttfamily string Uc\+Class\+::class\+Code\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file Uc\+Class.\+h.
+
+\mbox{\Hypertarget{classUcClass_aa4fed1401dbda91e4732d4e95f1daa13}\label{classUcClass_aa4fed1401dbda91e4732d4e95f1daa13}} 
+\index{UcClass@{UcClass}!schedule\_@{schedule\_}}
+\index{schedule\_@{schedule\_}!UcClass@{UcClass}}
+\doxysubsubsection{\texorpdfstring{schedule\_}{schedule\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSchedule}{Schedule}} Uc\+Class\+::schedule\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file Uc\+Class.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{UcClass_8h}{Uc\+Class.\+h}}\item 
+/home/joao/\+Desktop/\+AED/\+AED2324\+\_\+\+PRJ1\+\_\+\+G10/schedule/\mbox{\hyperlink{UcClass_8cpp}{Uc\+Class.\+cpp}}\end{DoxyCompactItemize}

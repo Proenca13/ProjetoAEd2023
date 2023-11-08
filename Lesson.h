@@ -8,6 +8,7 @@
 
 #include <string>
 #include <iostream>
+#include <map>
 using namespace std;
 //class that represents each individual lesson.
 class Lesson {
@@ -27,15 +28,14 @@ public:
     float get_duration() const;
     string get_type() const;
     string get_class_code() const;
-    //declare getters.
     void set_uc_code(string uccode);
     void setweekday(string weekday);
     void set_start_time(float starttime);
     void setduration(float duration);
     void settype(string type);
     void set_class_code(string class_code);
-    //declare setters.
     bool operator==(const Lesson& other) const;
+    bool operator<(const Lesson& other) const;
 };
 
 #endif
